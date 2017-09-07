@@ -1,8 +1,7 @@
 [DebugChecksum]
-Checksum=-137953461
+Checksum=-1160642019
 [DisAssemblyWindow]
-NumStates=_ 1
-State 1=_ 1
+NumStates=_ 0
 [InstructionProfiling]
 Enabled=_ 0
 [CodeCoverage]
@@ -38,7 +37,7 @@ Enabled=0
 ShowSource=1
 [Breakpoints]
 Bp0=_ "STD_CODE" "Code:0x0576" 0 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\..\..\..\..\Components\mt\MT_TASK.c}.207.7@1" 1 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\..\..\..\..\Components\mt\MT_TASK.c}.207.7@1" 0 0 0 0 "" 0 ""
 Count=2
 [ChipconEmu]
 Stop timers on halt=0

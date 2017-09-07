@@ -105,14 +105,9 @@ UINT16 GenericApp_ProcessEvent( byte task_id, UINT16 events )
     }
     if(events & USR_EVENT_UART)
     {
-        if(uartbuf_len == 8)
+        if(uartbuf_len == 8 && uartbuf[0] == 0x04)
         {
-            if(g_short_addr[uartbuf[0]] == 0xff)
-            {
-                GenericApp_SendTheUart(uartbuf, uartbuf_len);
-            }
-            
-			
+            GenericApp_SendTheUart(uartbuf, uartbuf_len);
         }
         uartbuf_len = 0;
         osal_stop_timerEx(GenericApp_TaskID, USR_EVENT_UART);

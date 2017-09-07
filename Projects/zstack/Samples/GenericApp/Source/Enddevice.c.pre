@@ -1,0 +1,173 @@
+#include "OSAL.h"
+#include "AF.h"
+#include "ZDApp.h"
+#include "ZDObject.h"
+#include "ZDProfile.h"
+
+#include "Common.h"
+#include "DebugTrace.h"
+
+#if !defined( WIN32 )
+  #include "OnBoard.h"
+#endif
+
+/* HAL */
+#include "hal_lcd.h"
+#include "hal_led.h"
+#include "hal_key.h"
+#include "hal_uart.h"
+
+
+const cId_t GenericApp_ClusterList[GENERICAPP_MAX_CLUSTERS] =
+{
+  GENERICAPP_CLUSTERID
+};
+
+const SimpleDescriptionFormat_t GenericApp_SimpleDesc =
+{
+  GENERICAPP_ENDPOINT,              //  int Endpoint;
+  GENERICAPP_PROFID,                //  uint16 AppProfId[2];
+  GENERICAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+  GENERICAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+  GENERICAPP_FLAGS,                 //  int   AppFlags:4; 
+  GENERICAPP_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+  (cId_t *)GenericApp_ClusterList,  //  byte *pAppInClusterList;
+  GENERICAPP_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+  (cId_t *)GenericApp_ClusterList   //  byte *pAppInClusterList;
+};
+
+endPointDesc_t GenericApp_epDesc;
+byte GenericApp_TaskID;
+byte GenericApp_TransID;
+devStates_t GenericApp_NwkState;
+nwk_addr_t g_nwt_addr;
+
+void GenericApp_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+void GenericApp_SendTheMessage( void );
+void GenericApp_SendTheUart(unsigned char * buf, int len);
+
+void GenericApp_Init( byte task_id )
+{   
+
+	halUARTCfg_t uartconfig;
+	
+    GenericApp_TaskID = task_id;
+    GenericApp_NwkState=DEV_INIT;
+    GenericApp_TransID = 0;
+    
+    GenericApp_epDesc.endPoint = GENERICAPP_ENDPOINT;
+    GenericApp_epDesc.task_id = &GenericApp_TaskID;
+    GenericApp_epDesc.simpleDesc
+        = (SimpleDescriptionFormat_t *)&GenericApp_SimpleDesc;
+    
+    GenericApp_epDesc.latencyReq = noLatencyReqs;
+    afRegister( &GenericApp_epDesc ); 
+
+	uartconfig.configured 	= TRUE;
+	uartconfig.baudRate 	= HAL_UART_BR_115200;
+	uartconfig.flowControl	= FALSE;
+	HalUARTOpen(0, &uartconfig);
+}
+
+UINT16 GenericApp_ProcessEvent( byte task_id, UINT16 events )
+{
+    afIncomingMSGPacket_t *MSGpkt;
+    
+    if ( events & SYS_EVENT_MSG )
+    {
+        MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( GenericApp_TaskID );
+        while ( MSGpkt )
+        {
+            switch ( MSGpkt->hdr.event )
+            {
+            case AF_INCOMING_MSG_CMD:
+                GenericApp_MessageMSGCB(MSGpkt);
+                break;
+            case ZDO_STATE_CHANGE:
+                GenericApp_NwkState = (devStates_t)(MSGpkt->hdr.status);
+                if(GenericApp_NwkState == DEV_END_DEVICE)
+                {
+                    GenericApp_SendTheMessage();
+                }
+                break;
+            default:
+                break;
+            }
+            osal_msg_deallocate( (uint8 *)MSGpkt );
+            MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( GenericApp_TaskID );
+        }
+        
+        // return unprocessed events
+        return (events ^ SYS_EVENT_MSG);
+    }
+    return 0;
+}
+void GenericApp_MessageMSGCB(afIncomingMSGPacket_t *pkt)
+{
+    unsigned char buf[8]; 
+    
+    switch ( pkt->clusterId )
+    {
+    case GENERICAPP_CLUSTERID:
+        osal_memset(buf, 0 , 8);
+        osal_memcpy(buf, pkt->cmd.Data, 4);
+		/*
+        if(buf[0]=='D' && buf[1]=='1')       
+        {
+            HalLedBlink(HAL_LED_1, 0, 50, 500);                                   
+        }
+        else
+        {
+            HalLedSet(HAL_LED_1,HAL_LED_MODE_ON);                   
+        }
+        */
+        GenericApp_SendTheUart(buf, 4);
+        break;
+    }
+}
+
+void GenericApp_SendTheMessage(void)
+{
+    byte SendData[3]="D1";
+       
+    afAddrType_t devDstAddr;
+    devDstAddr.addrMode=(afAddrMode_t)Addr16Bit;
+    devDstAddr.endPoint=GENERICAPP_ENDPOINT;
+    devDstAddr.addr.shortAddr=0x0000; 
+    
+    AF_DataRequest(&devDstAddr,
+        &GenericApp_epDesc,
+        GENERICAPP_CLUSTERID,
+        2,
+        SendData,
+        &GenericApp_TransID,
+        AF_DISCV_ROUTE,
+        AF_DEFAULT_RADIUS);
+
+	g_nwt_addr.short_addr 		= NLME_GetShortAddr();
+	g_nwt_addr.ext_addr			= NLME_GetExtAddr();
+    g_nwt_addr.coord_short_addr	= NLME_GetCoordShortAddr();
+	NLME_GetCoordExtAddr(g_nwt_addr.coord_ext_addr);
+
+	HalUARTWrite(0, (unsigned char*)&g_nwt_addr, sizeof(nwk_addr_t));
+}
+
+void GenericApp_SendTheUart(unsigned char *buf, int len)
+{       
+    afAddrType_t devDstAddr;
+    devDstAddr.addrMode=(afAddrMode_t)Addr16Bit;
+    devDstAddr.endPoint=GENERICAPP_ENDPOINT;
+    devDstAddr.addr.shortAddr=0x0000; 
+	
+    AF_DataRequest(&devDstAddr,
+        &GenericApp_epDesc,
+        GENERICAPP_CLUSTERID,
+        len,
+        buf,
+        &GenericApp_TransID,
+        AF_DISCV_ROUTE,
+        AF_DEFAULT_RADIUS);
+
+	
+}
+

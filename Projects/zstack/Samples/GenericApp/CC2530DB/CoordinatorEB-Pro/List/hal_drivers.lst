@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         07/Sep/2017  16:05:44 #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         08/Sep/2017  14:37:35 #
 # Copyright 2004-2011 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -9,19 +9,15 @@
 #    Calling convention =  xdata reentrant                                    #
 #    Constant location  =  data_rom                                           #
 #    Dptr setup         =  1,16                                               #
-#    Source file        =  F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGen #
-#                          ericAppÎŞÏßÊÕ·¢ÊµÑé\Components\hal\common\hal_driv #
-#                          ers.c                                              #
-#    Command line       =  -f "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓ #
-#                          ÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Ge #
-#                          nericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord #
-#                          .cfg" (-DCPU32MHZ -DROOT=__near_func               #
+#    Source file        =  F:\test\zigbus\Components\hal\common\hal_drivers.c #
+#    Command line       =  -f F:\test\zigbus\Projects\zstack\Samples\GenericA #
+#                          pp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg   #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
 #                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
 #                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.c #
-#                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  #
+#                          F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg     #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
 #                          -DDEFAULT_CHANLIST=0x00000800                      #
 #                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
 #                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
@@ -41,112 +37,73 @@
 #                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
 #                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
 #                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Components\hal\common\hal_dri #
-#                          vers.c" -D ZIGBEEPRO -D ZTOOL_P1 -D MT_TASK -D     #
+#                          F:\test\zigbus\Components\hal\common\hal_drivers.c #
+#                           -D ZIGBEEPRO -D ZTOOL_P1 -D MT_TASK -D            #
 #                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
-#                          -D NV_RESTORE -lC "F:\Download\µÚ5ÕÂ               #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\Coor #
-#                          dinatorEB-Pro\List\" -lA "F:\Download\µÚ5ÕÂ        #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\Coor #
-#                          dinatorEB-Pro\List\" --diag_suppress Pe001,Pa010   #
-#                          -o "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓ #
-#                          ÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Ge #
-#                          nericApp\CC2530DB\CoordinatorEB-Pro\Obj\" -e       #
-#                          --debug --core=plain --dptr=16,1                   #
-#                          --data_model=large --code_model=banked             #
-#                          --calling_convention=xdata_reentrant               #
-#                          --place_constants=data_rom --nr_virtual_regs 16    #
-#                          -I "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓ #
-#                          ÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Ge #
-#                          nericApp\CC2530DB\" -I "F:\Download\µÚ5ÕÂ          #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\S #
-#                          OURCE\" -I "F:\Download\µÚ5ÕÂ                      #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\ZMAIN\TI2530DB\" -I "F:\Download\µÚ5ÕÂ        #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\MT\" -I "F:\Download\µÚ5ÕÂ   #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\HAL\INCLUDE\" -I             #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGE #
-#                          T\CC2530EB\" -I "F:\Download\µÚ5ÕÂ                 #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\" -I          #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCL #
-#                          UDE\" -I "F:\Download\µÚ5ÕÂ                        #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\STACK\AF\" -I                #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK #
-#                          \" -I "F:\Download\µÚ5ÕÂ                           #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\STACK\SEC\" -I               #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAP #
-#                          I\" -I "F:\Download\µÚ5ÕÂ                          #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\STACK\SYS\" -I               #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO #
-#                          \" -I "F:\Download\µÚ5ÕÂ                           #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\ZMAC\F8W\" -I                #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\"    #
-#                          -I "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓ #
-#                          ÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Ge #
+#                          -D NV_RESTORE -lC F:\test\zigbus\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\CoordinatorEB-Pro\List\ #
+#                           -lA F:\test\zigbus\Projects\zstack\Samples\Generi #
+#                          cApp\CC2530DB\CoordinatorEB-Pro\List\              #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\CoordinatorEB-Pro\Obj\ -e --debug         #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I F:\test\zigbus\Projects\zs #
+#                          tack\Samples\GenericApp\CC2530DB\ -I               #
+#                          F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\..\SOURCE\ -I F:\test\zigbus\Projects\zst #
+#                          ack\Samples\GenericApp\CC2530DB\..\..\..\ZMAIN\TI2 #
+#                          530DB\ -I F:\test\zigbus\Projects\zstack\Samples\G #
+#                          enericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\   #
+#                          -I F:\test\zigbus\Projects\zstack\Samples\GenericA #
+#                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\ #
+#                           -I F:\test\zigbus\Projects\zstack\Samples\Generic #
+#                          App\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\ #
+#                          CC2530EB\ -I F:\test\zigbus\Projects\zstack\Sample #
+#                          s\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\OS #
+#                          AL\MCU\CCSOC\ -I F:\test\zigbus\Projects\zstack\Sa #
+#                          mples\GenericApp\CC2530DB\..\..\..\..\..\COMPONENT #
+#                          S\OSAL\INCLUDE\ -I F:\test\zigbus\Projects\zstack\ #
+#                          Samples\GenericApp\CC2530DB\..\..\..\..\..\COMPONE #
+#                          NTS\STACK\AF\ -I F:\test\zigbus\Projects\zstack\Sa #
+#                          mples\GenericApp\CC2530DB\..\..\..\..\..\COMPONENT #
+#                          S\STACK\NWK\ -I F:\test\zigbus\Projects\zstack\Sam #
+#                          ples\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS #
+#                          \STACK\SEC\ -I F:\test\zigbus\Projects\zstack\Samp #
+#                          les\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          STACK\SAPI\ -I F:\test\zigbus\Projects\zstack\Samp #
+#                          les\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          STACK\SYS\ -I F:\test\zigbus\Projects\zstack\Sampl #
+#                          es\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\S #
+#                          TACK\ZDO\ -I F:\test\zigbus\Projects\zstack\Sample #
+#                          s\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZM #
+#                          AC\F8W\ -I F:\test\zigbus\Projects\zstack\Samples\ #
+#                          GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC #
+#                          \ -I F:\test\zigbus\Projects\zstack\Samples\Generi #
+#                          cApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\S #
+#                          ADDR\ -I F:\test\zigbus\Projects\zstack\Samples\Ge #
 #                          nericApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVIC #
-#                          ES\SADDR\" -I "F:\Download\µÚ5ÕÂ                   #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\SERVICES\SDATA\" -I          #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLU #
-#                          DE\" -I "F:\Download\µÚ5ÕÂ                         #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\" -I          #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L #
-#                          EVEL\srf04\" -I "F:\Download\µÚ5ÕÂ                 #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_C #
-#                          HIP\" -Ohz --require_prototypes                    #
-#    List file          =  F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGen #
-#                          ericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Generi #
-#                          cApp\CC2530DB\CoordinatorEB-Pro\List\hal_drivers.l #
-#                          st                                                 #
-#    Object file        =  F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGen #
-#                          ericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Generi #
-#                          cApp\CC2530DB\CoordinatorEB-Pro\Obj\hal_drivers.r5 #
-#                          1                                                  #
+#                          ES\SDATA\ -I F:\test\zigbus\Projects\zstack\Sample #
+#                          s\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MA #
+#                          C\INCLUDE\ -I F:\test\zigbus\Projects\zstack\Sampl #
+#                          es\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\M #
+#                          AC\HIGH_LEVEL\ -I F:\test\zigbus\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\COMPONEN #
+#                          TS\MAC\LOW_LEVEL\srf04\ -I                         #
+#                          F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\s #
+#                          rf04\SINGLE_CHIP\ -Ohz --require_prototypes        #
+#    List file          =  F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\CoordinatorEB-Pro\List\hal_drivers.lst    #
+#    Object file        =  F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\CoordinatorEB-Pro\Obj\hal_drivers.r51     #
 #                                                                             #
 #                                                                             #
 ###############################################################################
 
-F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Components\hal\common\hal_drivers.c
+F:\test\zigbus\Components\hal\common\hal_drivers.c
       1          /**************************************************************************************************
       2            Filename:       hal_drivers.c
       3            Revised:        $Date: 2007-07-06 10:42:24 -0700 (Fri, 06 Jul 2007) $
@@ -306,59 +263,55 @@ F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Components
     127            /* ADC */
     128          #if (defined HAL_ADC) && (HAL_ADC == TRUE)
     129            HalAdcInit();
-   \   000004                ; Setup parameters for call to function HalAdcInit
-   \   000004   12....       LCALL   ??HalAdcInit?relay
     130          #endif
     131          
     132            /* DMA */
     133          #if (defined HAL_DMA) && (HAL_DMA == TRUE)
     134            // Must be called before the init call to any module that uses DMA.
     135            HalDmaInit();
-   \   000007                ; Setup parameters for call to function HalDmaInit
-   \   000007   12....       LCALL   ??HalDmaInit?relay
+   \   000004                ; Setup parameters for call to function HalDmaInit
+   \   000004   12....       LCALL   ??HalDmaInit?relay
     136          #endif
     137          
     138            /* Flash */
     139          #if (defined HAL_FLASH) && (HAL_FLASH == TRUE)
     140            // Must be called before the init call to any module that uses Flash access or NV.
     141            HalFlashInit();
-   \   00000A                ; Setup parameters for call to function HalFlashInit
-   \   00000A   12....       LCALL   ??HalFlashInit?relay
+   \   000007                ; Setup parameters for call to function HalFlashInit
+   \   000007   12....       LCALL   ??HalFlashInit?relay
     142          #endif
     143          
     144            /* AES */
     145          #if (defined HAL_AES) && (HAL_AES == TRUE)
     146            HalAesInit(); 
-   \   00000D                ; Setup parameters for call to function HalAesInit
-   \   00000D   12....       LCALL   ??HalAesInit?relay
     147          #endif
     148          
     149            /* LCD */
     150          #if (defined HAL_LCD) && (HAL_LCD == TRUE)
     151            HalLcdInit();
-   \   000010                ; Setup parameters for call to function HalLcdInit
-   \   000010   12....       LCALL   ??HalLcdInit?relay
+   \   00000A                ; Setup parameters for call to function HalLcdInit
+   \   00000A   12....       LCALL   ??HalLcdInit?relay
     152          #endif
     153          
     154            /* LED */
     155          #if (defined HAL_LED) && (HAL_LED == TRUE)
     156            HalLedInit(); 
-   \   000013                ; Setup parameters for call to function HalLedInit
-   \   000013   12....       LCALL   ??HalLedInit?relay
+   \   00000D                ; Setup parameters for call to function HalLedInit
+   \   00000D   12....       LCALL   ??HalLedInit?relay
     157          #endif
     158          
     159            /* UART */
     160          #if (defined HAL_UART) && (HAL_UART == TRUE)
     161            HalUARTInit();
-   \   000016                ; Setup parameters for call to function HalUARTInit
-   \   000016   12....       LCALL   ??HalUARTInit?relay
+   \   000010                ; Setup parameters for call to function HalUARTInit
+   \   000010   12....       LCALL   ??HalUARTInit?relay
     162          #endif
     163          
     164            /* KEY */
     165          #if (defined HAL_KEY) && (HAL_KEY == TRUE)
     166            HalKeyInit();
-   \   000019                ; Setup parameters for call to function HalKeyInit
-   \   000019   12....       LCALL   ??HalKeyInit?relay
+   \   000013                ; Setup parameters for call to function HalKeyInit
+   \   000013   12....       LCALL   ??HalKeyInit?relay
     167          #endif
     168          
     169            /* SPI */
@@ -371,7 +324,7 @@ F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Components
     176            usbHidInit();
     177          #endif
     178          }
-   \   00001C   80..         SJMP    ?Subroutine0
+   \   000016   80..         SJMP    ?Subroutine0
     179          
     180          
     181          /**************************************************************************************************
@@ -592,10 +545,8 @@ F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Components
      Function                 ISTACK PSTACK XSTACK
      --------                 ------ ------ ------
      HalDriverInit                2      0      0
-       -> HalAdcInit              4      0      0
        -> HalDmaInit              4      0      0
        -> HalFlashInit            4      0      0
-       -> HalAesInit              4      0      0
        -> HalLcdInit              4      0      0
        -> HalLedInit              4      0      0
        -> HalUARTInit             4      0      0
@@ -619,7 +570,7 @@ F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Components
      Hal_TaskID                  1
      Hal_Init                    9
      ?Subroutine0                7
-     HalDriverInit              30
+     HalDriverInit              24
      Hal_ProcessEvent           97
      Hal_ProcessPoll            10
      ??Hal_Init?relay            6
@@ -628,11 +579,11 @@ F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Components
      ??Hal_ProcessPoll?relay     6
 
  
- 153 bytes in segment BANKED_CODE
+ 147 bytes in segment BANKED_CODE
   24 bytes in segment BANK_RELAYS
    1 byte  in segment XDATA_Z
  
- 177 bytes of CODE  memory
+ 171 bytes of CODE  memory
    1 byte  of XDATA memory
 
 Errors: none

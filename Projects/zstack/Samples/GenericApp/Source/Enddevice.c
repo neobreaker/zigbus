@@ -137,7 +137,7 @@ void GenericApp_MessageMSGCB(afIncomingMSGPacket_t *pkt)
 			}
 			
             //GenericApp_Loop(buf, pkt->cmd.DataLength);
-	    HalUARTWrite(UART_PORT, buf+4, pkt->cmd.DataLength-4);
+	    	HalUARTWrite(UART_PORT, buf+4, pkt->cmd.DataLength-4);
             
             break;
     }

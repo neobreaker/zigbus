@@ -6,6 +6,7 @@
 
 #include "Common.h"
 #include "DebugTrace.h"
+#include <string.h>
 
 #if !defined( WIN32 )
 #include "OnBoard.h"
@@ -19,7 +20,6 @@
 #include "OSAL_Nv.h"
 
 #define MODBUS_TIMEOUT          3
-#define MODBUS_NUM              16
 
 const cId_t GenericApp_ClusterList[GENERICAPP_MAX_CLUSTERS] =
 {
@@ -46,14 +46,19 @@ unsigned char uartbuf[UART_BUF_SIZE];
 uint16 uartbuf_len = 0;
 nwk_addr_t g_nwt_addr;
 
-uint16 g_short_addr[MODBUS_NUM];
-unsigned char g_modbus_timeout[MODBUS_NUM];
+modbus_t g_modreq[MODBUS_SLAVE_NUM];
+modbus_t g_modrcv[MODBUS_SLAVE_NUM];
+
+uint16 g_short_addr[MODBUS_SLAVE_NUM];
+unsigned char g_modbus_timeout[MODBUS_SLAVE_NUM];
 
 void GenericApp_MessageMSGCB( afIncomingMSGPacket_t *pckt );
 void GenericApp_SendTheMessage(void);
 static void rxCB(uint8 port, uint8 event);
-void GenericApp_SendTheUart(unsigned char *buf, int len);
-void uart_cmd(unsigned char *buf, int len);
+static void GenericApp_SendTheUart(unsigned char *buf, int len);
+static void update_modbus_req(uint8* buf, uint16 len);
+static void proxy_send_response(uint8 address);
+static void update_modbus_rcv(uint8* buf, uint16 len);
 
 void GenericApp_Init( byte task_id )
 {
@@ -70,14 +75,16 @@ void GenericApp_Init( byte task_id )
     GenericApp_epDesc.latencyReq = noLatencyReqs;    //ÑÓÊ±²ßÂÔ
     afRegister( &GenericApp_epDesc );                //ÏòAF²ãµÇ¼ÇÃèÊö·û
 
-	osal_memset(g_short_addr, 0xff, MODBUS_NUM*2);
-    osal_memset(g_modbus_timeout, MODBUS_TIMEOUT, MODBUS_NUM);
+	osal_memset(g_short_addr, 0xff, MODBUS_SLAVE_NUM*2);
+    osal_memset(g_modbus_timeout, MODBUS_TIMEOUT, MODBUS_SLAVE_NUM);
 
     uartconfig.configured   = TRUE;
     uartconfig.baudRate     = HAL_UART_BR_9600;
     uartconfig.flowControl  = FALSE;
     uartconfig.callBackFunc = rxCB;
     HalUARTOpen(UART_PORT, &uartconfig);
+
+	//osal_start_timerEx(GenericApp_TaskID, USR_EVENT_POLL, 5);
 
 }
 
@@ -103,16 +110,25 @@ UINT16 GenericApp_ProcessEvent( byte task_id, UINT16 events )
         }
         return (events ^ SYS_EVENT_MSG);
     }
+	
     if(events & USR_EVENT_UART)
     {
-        if(uartbuf_len == 8 && uartbuf[0] == 0x04)
+        if(uartbuf_len == 8)
         {
-            GenericApp_SendTheUart(uartbuf, uartbuf_len);
+            //GenericApp_SendTheUart(uartbuf, uartbuf_len);
+            update_modbus_req(uartbuf, uartbuf_len);
+	    	proxy_send_response(uartbuf[0]);
         }
         uartbuf_len = 0;
         osal_stop_timerEx(GenericApp_TaskID, USR_EVENT_UART);
         return (events ^ USR_EVENT_UART);
     }
+/*
+	if(events & USR_EVENT_POLL)
+    {
+		osal_stop_timerEx(GenericApp_TaskID, USR_EVENT_POLL);
+	}
+*/
     return 0;
 }
 
@@ -135,13 +151,15 @@ void GenericApp_MessageMSGCB(afIncomingMSGPacket_t *pkt)
 
             }
 
-            HalUARTWrite(0, pkt->cmd.Data+4, pkt->cmd.DataLength-4);
+            //HalUARTWrite(0, pkt->cmd.Data+4, pkt->cmd.DataLength-4);
+            update_modbus_rcv(pkt->cmd.Data+4, pkt->cmd.DataLength-4);
+            
             break;
     }
 }
 
 
-void GenericApp_SendTheUart(unsigned char *buf, int len)
+static void GenericApp_SendTheUart(unsigned char *buf, int len)
 {
     unsigned char snd_buf[UART_BUF_SIZE + 4];
     unsigned char *p;
@@ -192,10 +210,47 @@ static void rxCB(uint8 port, uint8 event)
     if(numread > 0)
     {
         uartbuf_len += numread;
-        osal_start_timerEx(GenericApp_TaskID, USR_EVENT_UART, 10);
+        osal_start_timerEx(GenericApp_TaskID, USR_EVENT_UART, 1);
 
     }
 
+}
+
+static void update_modbus_req(uint8* buf, uint16 len)
+{
+	if(len <= 0 || buf[0] <= 0 || buf[0] > MODBUS_SLAVE_NUM)
+		return ;
+
+	
+	memcpy(g_modreq[buf[0]-1].buf, buf, len);
+	g_modreq[buf[0]-1].len = len;
+	
+}
+
+static void proxy_send_response(uint8 address)
+{
+	uint8 buf_tmp[MODBUS_SLAVE_NUM] = {0x04, 0x03, 0x08, 0x00, 0x00, 0x00, 0x00, 0x03, 0xEE, 0x00, 0x00, 0xE4, 0x6A};
+	uint16 len_tmp = 13;
+	if(address <= 0 || address > MODBUS_SLAVE_NUM)
+		return;
+
+	if(address == 0x04)
+	{
+		HalUARTWrite(0, buf_tmp, len_tmp);
+		return ;
+	}
+	
+	if(g_modbus_timeout[address] < MODBUS_TIMEOUT)
+		HalUARTWrite(0, g_modreq[address-1].buf, g_modreq[address-1].len);
+}
+
+static void update_modbus_rcv(uint8* buf, uint16 len)
+{
+	if(len <= 0 || buf[0] <= 0 || buf[0] > MODBUS_SLAVE_NUM)
+		return ;
+
+	memcpy(g_modrcv[buf[0]-1].buf, buf, len);
+	g_modrcv[buf[0]-1].len = len;
 }
 
 /*

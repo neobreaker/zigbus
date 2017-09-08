@@ -13,6 +13,7 @@
 #define GENERICAPP_CLUSTERID            1
 
 #define USR_EVENT_UART					0x01
+#define USR_EVENT_POLL					0x02
 
 #define UART_PORT						0
 #define UART_BUF_SIZE					128
@@ -24,6 +25,8 @@
 #define UART_CMD_TPSA					0x04		//tell parent short addr
 #define UART_CMD_TPEA					0x05		//tell parent ext addr
 
+#define MODBUS_SLAVE_NUM				16
+
 typedef struct 
 {
 	uint16  short_addr;
@@ -32,6 +35,12 @@ typedef struct
 	uint8  *parent_ext_addr;
 	
 }nwk_addr_t;
+
+typedef struct 
+{
+	uint8 buf[16];
+	uint8 len;
+}modbus_t;
 
 extern void GenericApp_Init( byte task_id );
 extern UINT16 GenericApp_ProcessEvent( byte task_id, UINT16 events );

@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        18/Aug/2017  10:18:25 /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        11/Sep/2017  15:08:14 /
 // Copyright 2004-2011 IAR Systems AB.                                        /
 //                                                                            /
 //    Core               =  plain                                             /
@@ -9,18 +9,14 @@
 //    Calling convention =  xdata reentrant                                   /
 //    Constant location  =  data_rom                                          /
 //    Dptr setup         =  1,16                                              /
-//    Source file        =  F:\Download\第5章 zigbee协议栈应用与组网\3.基于Ge /
-//                          nericApp无线收发实验\Components\hal\target\CC2530 /
-//                          EB\hal_adc.c                                      /
-//    Command line       =  -f "F:\Download\第5章 zigbee协议栈应用与组网\3.基 /
-//                          于GenericApp无线收发实验\Projects\zstack\Samples\ /
-//                          GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEn /
-//                          dev.cfg" (-DCPU32MHZ -DROOT=__near_func           /
-//                          -DBLINK_LEDS) -f "F:\Download\第5章               /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\Tools\CC2530DB\f8wConfig.cfg" (-DSECURE=0  /
-//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//    Source file        =  F:\test\zigbus\Components\hal\target\CC2530EB\hal /
+//                          _adc.c                                            /
+//    Command line       =  -f F:\test\zigbus\Projects\zstack\Samples\Generic /
+//                          App\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg /
+//                           (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f  /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg   /
+//                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR     /
 //                          -DDEFAULT_CHANLIST=0x00000800                     /
 //                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
 //                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
@@ -40,105 +36,70 @@
 //                          "-DCONST=const __code" -DGENERIC=__generic        /
 //                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
 //                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
-//                          -DREJOIN_POLL_RATE=440 "F:\Download\第5章         /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Components\hal\target\CC2530EB\hal_adc.c" -D   /
-//                          ZIGBEEPRO -D NWK_AUTO_POLL -D ZTOOL_P1 -D         /
-//                          MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D          /
+//                          -DREJOIN_POLL_RATE=440 F:\test\zigbus\Components\ /
+//                          hal\target\CC2530EB\hal_adc.c -D ZIGBEEPRO -D     /
+//                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D           /
+//                          MT_SYS_FUNC -D MT_ZDO_FUNC -D                     /
 //                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC          /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\EndDeviceEB-Pro\List\" -lA       /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\EndDeviceEB-Pro\List\"           /
-//                          --diag_suppress Pe001,Pa010 -o                    /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\EndDeviceEB-Pro\Obj\" -e         /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\EndDeviceEB-Pro\List\ -lA               /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\EndDeviceEB-Pro\List\ --diag_suppress   /
+//                          Pe001,Pa010 -o F:\test\zigbus\Projects\zstack\Sam /
+//                          ples\GenericApp\CC2530DB\EndDeviceEB-Pro\Obj\ -e  /
 //                          --debug --core=plain --dptr=16,1                  /
 //                          --data_model=large --code_model=banked            /
 //                          --calling_convention=xdata_reentrant              /
 //                          --place_constants=data_rom --nr_virtual_regs 16   /
-//                          -I "F:\Download\第5章 zigbee协议栈应用与组网\3.基 /
-//                          于GenericApp无线收发实验\Projects\zstack\Samples\ /
-//                          GenericApp\CC2530DB\" -I "F:\Download\第5章       /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \SOURCE\" -I "F:\Download\第5章                   /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\ZMAIN\TI2530DB\" -I "F:\Download\第5章     /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\MT\" -I                   /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\IN /
-//                          CLUDE\" -I "F:\Download\第5章                     /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\" -I  /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\M /
-//                          CU\CCSOC\" -I "F:\Download\第5章                  /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I         /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
+//                          -I F:\test\zigbus\Projects\zstack\Samples\Generic /
+//                          App\CC2530DB\ -I F:\test\zigbus\Projects\zstack\S /
+//                          amples\GenericApp\CC2530DB\..\SOURCE\ -I          /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I             /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\MT\ -I        /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\  /
+//                          -I F:\test\zigbus\Projects\zstack\Samples\Generic /
+//                          App\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET /
+//                          \CC2530EB\ -I F:\test\zigbus\Projects\zstack\Samp /
+//                          les\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \OSAL\MCU\CCSOC\ -I F:\test\zigbus\Projects\zstac /
+//                          k\Samples\GenericApp\CC2530DB\..\..\..\..\..\COMP /
+//                          ONENTS\OSAL\INCLUDE\ -I                           /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\ -I  /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK\    /
+//                          -I F:\test\zigbus\Projects\zstack\Samples\Generic /
+//                          App\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC\ /
+//                           -I F:\test\zigbus\Projects\zstack\Samples\Generi /
+//                          cApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAP /
+//                          I\ -I F:\test\zigbus\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\S /
+//                          YS\ -I F:\test\zigbus\Projects\zstack\Samples\Gen /
 //                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ /
-//                          AF\" -I "F:\Download\第5章                        /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\STACK\NWK\" -I            /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ /
-//                          SEC\" -I "F:\Download\第5章                       /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\STACK\SAPI\" -I           /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ /
-//                          SYS\" -I "F:\Download\第5章                       /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\STACK\ZDO\" -I            /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F /
-//                          8W\" -I "F:\Download\第5章                        /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\ZMAC\" -I                 /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVIC /
-//                          ES\SADDR\" -I "F:\Download\第5章                  /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\SERVICES\SDATA\" -I       /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\IN /
-//                          CLUDE\" -I "F:\Download\第5章                     /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\" -I       /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LO /
-//                          W_LEVEL\srf04\" -I "F:\Download\第5章             /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGL /
-//                          E_CHIP\" -Ohz --require_prototypes                /
-//    List file          =  F:\Download\第5章 zigbee协议栈应用与组网\3.基于Ge /
-//                          nericApp无线收发实验\Projects\zstack\Samples\Gene /
-//                          ricApp\CC2530DB\EndDeviceEB-Pro\List\hal_adc.s51  /
+//                          ZDO\ -I F:\test\zigbus\Projects\zstack\Samples\Ge /
+//                          nericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\ /
+//                          F8W\ -I F:\test\zigbus\Projects\zstack\Samples\Ge /
+//                          nericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\ /
+//                           -I F:\test\zigbus\Projects\zstack\Samples\Generi /
+//                          cApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\ /
+//                          SADDR\ -I F:\test\zigbus\Projects\zstack\Samples\ /
+//                          GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\SER /
+//                          VICES\SDATA\ -I F:\test\zigbus\Projects\zstack\Sa /
+//                          mples\GenericApp\CC2530DB\..\..\..\..\..\COMPONEN /
+//                          TS\MAC\INCLUDE\ -I F:\test\zigbus\Projects\zstack /
+//                          \Samples\GenericApp\CC2530DB\..\..\..\..\..\COMPO /
+//                          NENTS\MAC\HIGH_LEVEL\ -I                          /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL /
+//                          \srf04\ -I F:\test\zigbus\Projects\zstack\Samples /
+//                          \GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MA /
+//                          C\LOW_LEVEL\srf04\SINGLE_CHIP\ -Ohz               /
+//                          --require_prototypes                              /
+//    List file          =  F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\EndDeviceEB-Pro\List\hal_adc.s51        /
 //                                                                            /
 //                                                                            /
 ///////////////////////////////////////////////////////////////////////////////
@@ -162,15 +123,11 @@
         RSEG PSTACK:XDATA:NOROOT(0)
         RSEG XSTACK:XDATA:NOROOT(0)
 
-        EXTERN ?ALLOC_XSTACK8
         EXTERN ?BANKED_ENTER_XDATA
         EXTERN ?BANKED_LEAVE_XDATA
         EXTERN ?BDISPATCH
         EXTERN ?BRET
-        EXTERN ?DEALLOC_XSTACK8
-        EXTERN ?SS_SHR
         EXTERN ?V0
-        EXTERN ?XSP
 
         PUBLIC ??HalAdcCheckVdd?relay
         FUNCTION ??HalAdcCheckVdd?relay,0203H
@@ -180,9 +137,6 @@
         FUNCTION ??HalAdcRead?relay,0203H
         PUBLIC ??HalAdcSetReference?relay
         FUNCTION ??HalAdcSetReference?relay,0203H
-        PUBWEAK ADCCFG
-        PUBWEAK ADCCON1
-        PUBWEAK ADCCON2
         PUBWEAK ADCCON3
         PUBWEAK ADCH
         PUBWEAK ADCL
@@ -193,18 +147,12 @@
         PUBLIC HalAdcInit
         FUNCTION HalAdcInit,0203H
         ARGFRAME XSTACK, 0, STACK
-        LOCFRAME ISTACK, 3, STACK
-        LOCFRAME XSTACK, 1, STACK
         PUBLIC HalAdcRead
         FUNCTION HalAdcRead,0203H
         ARGFRAME XSTACK, 0, STACK
-        LOCFRAME ISTACK, 1, STACK
-        LOCFRAME XSTACK, 11, STACK
         PUBLIC HalAdcSetReference
         FUNCTION HalAdcSetReference,0203H
         ARGFRAME XSTACK, 0, STACK
-        LOCFRAME ISTACK, 3, STACK
-        LOCFRAME XSTACK, 1, STACK
         PUBWEAK _A_TCON
         
         CFI Names cfiNames0
@@ -295,73 +243,6 @@
         CFI ?RET_LOW Frame(CFA_SP, 1)
         CFI EndCommon cfiCommon0
         
-        
-        CFI Common cfiCommon1 Using cfiNames0
-        CFI CodeAlign 1
-        CFI DataAlign -1
-        CFI ReturnAddress ?RET CODE
-        CFI CFA_DOVERLAY Used
-        CFI CFA_IOVERLAY Used
-        CFI CFA_SP SP+-2
-        CFI CFA_PSP16 PSP16+0
-        CFI CFA_XSP16 XSP16+0
-        CFI `PSW.CY` SameValue
-        CFI `B.BR0` SameValue
-        CFI `B.BR1` SameValue
-        CFI `B.BR2` SameValue
-        CFI `B.BR3` SameValue
-        CFI `B.BR4` SameValue
-        CFI `B.BR5` SameValue
-        CFI `B.BR6` SameValue
-        CFI `B.BR7` SameValue
-        CFI `VB.BR8` SameValue
-        CFI `VB.BR9` SameValue
-        CFI `VB.BR10` SameValue
-        CFI `VB.BR11` SameValue
-        CFI `VB.BR12` SameValue
-        CFI `VB.BR13` SameValue
-        CFI `VB.BR14` SameValue
-        CFI `VB.BR15` SameValue
-        CFI VB SameValue
-        CFI B SameValue
-        CFI A SameValue
-        CFI PSW SameValue
-        CFI DPL0 SameValue
-        CFI DPH0 SameValue
-        CFI R0 SameValue
-        CFI R1 SameValue
-        CFI R2 SameValue
-        CFI R3 SameValue
-        CFI R4 SameValue
-        CFI R5 SameValue
-        CFI R6 SameValue
-        CFI R7 SameValue
-        CFI V0 SameValue
-        CFI V1 SameValue
-        CFI V2 SameValue
-        CFI V3 SameValue
-        CFI V4 SameValue
-        CFI V5 SameValue
-        CFI V6 SameValue
-        CFI V7 SameValue
-        CFI V8 SameValue
-        CFI V9 SameValue
-        CFI V10 SameValue
-        CFI V11 SameValue
-        CFI V12 SameValue
-        CFI V13 SameValue
-        CFI V14 SameValue
-        CFI V15 SameValue
-        CFI PSPH Undefined
-        CFI PSPL Undefined
-        CFI XSPH Undefined
-        CFI XSPL Undefined
-        CFI ?RET Concat
-        CFI ?BRET_EXT SameValue
-        CFI ?RET_HIGH Frame(CFA_SP, 2)
-        CFI ?RET_LOW Frame(CFA_SP, 1)
-        CFI EndCommon cfiCommon1
-        
 HalAdcCheckVdd      SYMBOL "HalAdcCheckVdd"
 ??HalAdcCheckVdd?relay SYMBOL "?relay", HalAdcCheckVdd
 HalAdcInit          SYMBOL "HalAdcInit"
@@ -371,7 +252,7 @@ HalAdcRead          SYMBOL "HalAdcRead"
 HalAdcSetReference  SYMBOL "HalAdcSetReference"
 ??HalAdcSetReference?relay SYMBOL "?relay", HalAdcSetReference
 
-// F:\Download\第5章 zigbee协议栈应用与组网\3.基于GenericApp无线收发实验\Components\hal\target\CC2530EB\hal_adc.c
+// F:\test\zigbus\Components\hal\target\CC2530EB\hal_adc.c
 //    1 /**************************************************************************************************
 //    2   Filename:       hal_adc.c
 //    3   Revised:        $Date: 2009-12-17 13:13:47 -0800 (Thu, 17 Dec 2009) $
@@ -422,18 +303,6 @@ _A_TCON:
         DATA8
         DS 1
 
-        ASEGN SFR_AN:DATA:NOROOT,0b4H
-// unsigned char volatile __sfr ADCCON1
-ADCCON1:
-        DATA8
-        DS 1
-
-        ASEGN SFR_AN:DATA:NOROOT,0b5H
-// unsigned char volatile __sfr ADCCON2
-ADCCON2:
-        DATA8
-        DS 1
-
         ASEGN SFR_AN:DATA:NOROOT,0b6H
 // unsigned char volatile __sfr ADCCON3
 ADCCON3:
@@ -449,12 +318,6 @@ ADCL:
         ASEGN SFR_AN:DATA:NOROOT,0bbH
 // unsigned char volatile __sfr ADCH
 ADCH:
-        DATA8
-        DS 1
-
-        ASEGN SFR_AN:DATA:NOROOT,0f2H
-// unsigned char volatile __sfr ADCCFG
-ADCCFG:
         DATA8
         DS 1
 //   44 #include  "hal_defs.h"
@@ -554,86 +417,31 @@ HalAdcInit:
         CFI Function HalAdcInit
         CODE
 //  120 {
-        PUSH    DPL
-        CFI DPL0 Frame(CFA_SP, 4)
-        CFI CFA_SP SP+-4
-        PUSH    DPH
-        CFI DPH0 Frame(CFA_SP, 5)
-        CFI CFA_SP SP+-5
-        ; Saved register size: 2
-        ; Auto size: 1
-        MOV     A,#-0x1
-        LCALL   ?ALLOC_XSTACK8
-        CFI CFA_XSP16 add(XSP16, 1)
+        ; Saved register size: 0
+        ; Auto size: 0
 //  121 #if (HAL_ADC == TRUE)
 //  122   volatile uint8  tmp;
 //  123 
 //  124   ADCCON1 = HAL_ADC_STSEL | HAL_ADC_RAND_GEN | 0x03;
-        MOV     0xb4,#0x3f
 //  125   ADCCON2 = HAL_ADC_REF_VOLT | HAL_ADC_DEC_RATE | HAL_ADC_SCHN;
-        MOV     0xb5,#-0x71
 //  126   /*
 //  127   *  After reset, the first ADC reading of the extra conversion always reads GND level.
 //  128   *  We will do a few dummy conversions to bypass this bug.
 //  129   */
 //  130   tmp = ADCL;     /* read ADCL,ADCH to clear EOC */
-        LCALL   ?Subroutine2 & 0xFFFF
 //  131   tmp = ADCH;
 //  132   ADCCON3 = HAL_ADC_REF_VOLT | HAL_ADC_DEC_RATE | HAL_ADC_ECHN;
-??CrossCallReturnLabel_0:
-        MOV     0xb6,#-0x74
 //  133   while ((ADCCON1 & HAL_ADC_EOC) != HAL_ADC_EOC);   /* Wait for conversion */
-??HalAdcInit_0:
-        MOV     A,0xb4
-        MOV     C,0xE0 /* A   */.7
-        JNC     ??HalAdcInit_0
 //  134   tmp = ADCL;     /* read ADCL,ADCH to clear EOC */
-        MOV     A,0xba
-        LCALL   ??Subroutine3_0 & 0xFFFF
 //  135   tmp = ADCH;
 //  136   ADCCON3 = HAL_ADC_REF_VOLT | HAL_ADC_DEC_RATE | HAL_ADC_ECHN;
-??CrossCallReturnLabel_3:
-        MOV     0xb6,#-0x74
 //  137   while ((ADCCON1 & HAL_ADC_EOC) != HAL_ADC_EOC);   /* Wait for conversion */
-??HalAdcInit_1:
-        MOV     A,0xb4
-        MOV     C,0xE0 /* A   */.7
-        JNC     ??HalAdcInit_1
-        CFI EndBlock cfiBlock0
 //  138   tmp = ADCL;     /* read ADCL,ADCH to clear EOC */
-        REQUIRE ?Subroutine0
-        REQUIRE ADCCON1
-        REQUIRE ADCCON2
-        REQUIRE ADCL
-        REQUIRE ADCH
-        REQUIRE ADCCON3
-        ; // Fall through to label ?Subroutine0
 //  139   tmp = ADCH;
 //  140 #endif
 //  141 }
-
-        RSEG BANKED_CODE:CODE:NOROOT(0)
-?Subroutine0:
-        CFI Block cfiBlock1 Using cfiCommon0
-        CFI NoFunction
-        CFI CFA_SP SP+-5
-        CFI CFA_XSP16 add(XSP16, 1)
-        CFI DPL0 Frame(CFA_SP, 4)
-        CFI DPH0 Frame(CFA_SP, 5)
-        MOV     A,0xba
-        LCALL   ??Subroutine3_0 & 0xFFFF
-??CrossCallReturnLabel_4:
-        MOV     A,#0x1
-        LCALL   ?DEALLOC_XSTACK8
-        CFI CFA_XSP16 XSP16+0
-        POP     DPH
-        CFI CFA_SP SP+-4
-        CFI DPH0 SameValue
-        POP     DPL
-        CFI CFA_SP SP+-3
-        CFI DPL0 SameValue
         LJMP    ?BRET
-        CFI EndBlock cfiBlock1
+        CFI EndBlock cfiBlock0
 //  142 
 //  143 /**************************************************************************************************
 //  144  * @fn      HalAdcRead
@@ -652,33 +460,12 @@ HalAdcInit:
         RSEG BANKED_CODE:CODE:NOROOT(0)
 //  156 uint16 HalAdcRead (uint8 channel, uint8 resolution)
 HalAdcRead:
-        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Block cfiBlock1 Using cfiCommon0
         CFI Function HalAdcRead
         CODE
 //  157 {
-        MOV     A,#-0xa
-        LCALL   ?BANKED_ENTER_XDATA
-        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
-        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
-        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
-        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
-        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
-        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
-        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
-        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
-        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
-        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
-        CFI CFA_SP SP+0
-        CFI CFA_XSP16 add(XSP16, 10)
-        ; Saved register size: 10
-        ; Auto size: 1
-        MOV     A,#-0x1
-        LCALL   ?ALLOC_XSTACK8
-        CFI CFA_XSP16 add(XSP16, 11)
-        MOV     A,R1
-        MOV     R4,A
-        MOV     A,R2
-        MOV     R5,A
+        ; Saved register size: 0
+        ; Auto size: 0
 //  158   int16  reading = 0;
 //  159 
 //  160 #if (HAL_ADC == TRUE)
@@ -687,14 +474,10 @@ HalAdcRead:
 //  163   uint8   adctemp;
 //  164   volatile  uint8 tmp;
 //  165   uint8  adcChannel = 1;
-        MOV     R1,#0x1
 //  166   uint8  reference;
 //  167 
 //  168   /* store the previously set reference voltage selection */
 //  169   reference = ADCCON3 & HAL_ADC_REF_BITS;
-        MOV     A,0xb6
-        ANL     A,#0xc0
-        MOV     R2,A
 //  170 
 //  171   /*
 //  172   * If Analog input channel is AIN0..AIN7, make sure corresponing P0 I/O pin is enabled.  The code
@@ -705,174 +488,74 @@ HalAdcRead:
 //  177   * than actuality because the pin did not have time to fully charge.
 //  178   */
 //  179   if (channel < 8)
-        MOV     A,R4
-        CLR     C
-        SUBB    A,#0x8
-        JNC     ??HalAdcRead_0
 //  180   {
 //  181     for (i=0; i < channel; i++)
-        MOV     R0,#0x0
-        SJMP    ??HalAdcRead_1
 //  182     {
 //  183       adcChannel <<= 1;
-??HalAdcRead_2:
-        MOV     A,R1
-        CLR     C
-        RLC     A
-        MOV     R1,A
 //  184     }
-        INC     R0
-??HalAdcRead_1:
-        MOV     A,R0
-        CLR     C
-        SUBB    A,R4
-        JC      ??HalAdcRead_2
 //  185   }
 //  186 
 //  187   /* Enable channel */
 //  188   ADCCFG |= adcChannel;
-??HalAdcRead_0:
-        MOV     A,R1
-        ORL     0xf2,A
 //  189 
 //  190   /* Convert resolution to decimation rate */
 //  191   switch (resolution)
-        MOV     A,R5
-        DEC     A
-        JZ      ??HalAdcRead_3
-        DEC     A
-        JZ      ??HalAdcRead_4
-        DEC     A
-        JZ      ??HalAdcRead_5
-        SJMP    ??HalAdcRead_6
 //  192   {
 //  193     case HAL_ADC_RESOLUTION_8:
 //  194       resbits = HAL_ADC_DEC_064;
-??HalAdcRead_3:
-        MOV     R0,#0x0
 //  195       break;
-        SJMP    ??HalAdcRead_7
 //  196     case HAL_ADC_RESOLUTION_10:
 //  197       resbits = HAL_ADC_DEC_128;
-??HalAdcRead_4:
-        MOV     R0,#0x10
 //  198       break;
-        SJMP    ??HalAdcRead_7
 //  199     case HAL_ADC_RESOLUTION_12:
 //  200       resbits = HAL_ADC_DEC_256;
-??HalAdcRead_5:
-        MOV     R0,#0x20
 //  201       break;
-        SJMP    ??HalAdcRead_7
 //  202     case HAL_ADC_RESOLUTION_14:
 //  203     default:
 //  204       resbits = HAL_ADC_DEC_512;
-??HalAdcRead_6:
-        MOV     R0,#0x30
 //  205       break;
 //  206   }
 //  207 
 //  208   /* read ADCL,ADCH to clear EOC */
 //  209   tmp = ADCL;
-??HalAdcRead_7:
-        LCALL   ?Subroutine2 & 0xFFFF
 //  210   tmp = ADCH;
 //  211 
 //  212   /* Setup Sample */
 //  213   adctemp = ADCCON3;
-??CrossCallReturnLabel_1:
-        MOV     A,0xb6
 //  214   adctemp &= ~(HAL_ADC_CHN_BITS | HAL_ADC_DEC_BITS | HAL_ADC_REF_BITS);
 //  215   adctemp |= channel | resbits | (reference);
 //  216 
 //  217   /* writing to this register starts the extra conversion */
 //  218   ADCCON3 = adctemp;
-        MOV     A,R4
-        ORL     A,R0
-        ORL     A,R2
-        MOV     0xb6,A
 //  219 
 //  220   /* Wait for the conversion to be done */
 //  221   while (!(ADCCON1 & HAL_ADC_EOC));
-??HalAdcRead_8:
-        MOV     A,0xb4
-        MOV     C,0xE0 /* A   */.7
-        JNC     ??HalAdcRead_8
 //  222 
 //  223   /* Disable channel after done conversion */
 //  224   ADCCFG &= (adcChannel ^ 0xFF);
-        MOV     A,#-0x1
-        XRL     A,R1
-        ANL     0xf2,A
 //  225 
 //  226   /* Read the result */
 //  227   reading = (int16) (ADCL);
-        MOV     A,0xba
-        MOV     ?V0 + 0,A
 //  228   reading |= (int16) (ADCH << 8);
-        MOV     A,0xbb
-        MOV     R2,?V0 + 0
-        MOV     R3,A
 //  229 
 //  230   /* Treat small negative as 0 */
 //  231   if (reading < 0)
-        CLR     C
-        SUBB    A,#0x0
-        MOV     C,0xD0 /* PSW */.2
-        XRL     A,PSW
-        RLC     A
-        JNC     ??HalAdcRead_9
 //  232     reading = 0;
-        MOV     R2,#0x0
-        MOV     R3,#0x0
 //  233 
 //  234   switch (resolution)
-??HalAdcRead_9:
-        MOV     A,R5
-        DEC     A
-        JZ      ??HalAdcRead_10
-        DEC     A
-        JZ      ??HalAdcRead_11
-        DEC     A
-        JZ      ??HalAdcRead_12
-        SJMP    ??HalAdcRead_13
 //  235   {
 //  236     case HAL_ADC_RESOLUTION_8:
 //  237       reading >>= 8;
-??HalAdcRead_10:
-        MOV     ?V0 + 0,R2
-        MOV     ?V0 + 1,R3
-        MOV     A,#0x8
-        SJMP    ??HalAdcRead_14
 //  238       break;
 //  239     case HAL_ADC_RESOLUTION_10:
 //  240       reading >>= 6;
-??HalAdcRead_11:
-        MOV     ?V0 + 0,R2
-        MOV     ?V0 + 1,R3
-        MOV     A,#0x6
-        SJMP    ??HalAdcRead_14
 //  241       break;
 //  242     case HAL_ADC_RESOLUTION_12:
 //  243       reading >>= 4;
-??HalAdcRead_12:
-        MOV     ?V0 + 0,R2
-        MOV     ?V0 + 1,R3
-        MOV     A,#0x4
-        SJMP    ??HalAdcRead_14
 //  244       break;
 //  245     case HAL_ADC_RESOLUTION_14:
 //  246     default:
 //  247       reading >>= 2;
-??HalAdcRead_13:
-        MOV     ?V0 + 0,R2
-        MOV     ?V0 + 1,R3
-        MOV     A,#0x2
-??HalAdcRead_14:
-        MOV     R0,#?V0 + 0
-        LCALL   ?SS_SHR
-        MOV     R2,?V0 + 0
-        MOV     R3,?V0 + 1
 //  248     break;
 //  249   }
 //  250 #else
@@ -882,37 +565,11 @@ HalAdcRead:
 //  254 #endif
 //  255 
 //  256   return ((uint16)reading);
-        INC     A
-        LCALL   ?DEALLOC_XSTACK8
-        CFI EndBlock cfiBlock2
-        REQUIRE ?Subroutine1
-        REQUIRE ADCCON3
-        REQUIRE ADCCFG
-        REQUIRE ADCL
-        REQUIRE ADCH
-        REQUIRE ADCCON1
-        ; // Fall through to label ?Subroutine1
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock1
 //  257 }
-
-        RSEG BANKED_CODE:CODE:NOROOT(0)
-?Subroutine1:
-        CFI Block cfiBlock3 Using cfiCommon0
-        CFI NoFunction
-        CFI CFA_SP SP+0
-        CFI CFA_XSP16 add(XSP16, 10)
-        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
-        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
-        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
-        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
-        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
-        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
-        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
-        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
-        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
-        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
-        MOV     R7,#0x2
-        LJMP    ?BANKED_LEAVE_XDATA
-        CFI EndBlock cfiBlock3
 //  258 
 //  259 /**************************************************************************************************
 //  260  * @fn      HalAdcSetReference
@@ -928,190 +585,35 @@ HalAdcRead:
         RSEG BANKED_CODE:CODE:NOROOT(0)
 //  269 void HalAdcSetReference ( uint8 reference )
 HalAdcSetReference:
-        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Block cfiBlock2 Using cfiCommon0
         CFI Function HalAdcSetReference
         CODE
 //  270 {
-        PUSH    DPL
-        CFI DPL0 Frame(CFA_SP, 4)
-        CFI CFA_SP SP+-4
-        PUSH    DPH
-        CFI DPH0 Frame(CFA_SP, 5)
-        CFI CFA_SP SP+-5
-        ; Saved register size: 2
-        ; Auto size: 1
-        MOV     A,#-0x1
-        LCALL   ?ALLOC_XSTACK8
-        CFI CFA_XSP16 add(XSP16, 1)
+        ; Saved register size: 0
+        ; Auto size: 0
 //  271 #if (HAL_ADC == TRUE)
 //  272   volatile uint8 tmp;
 //  273 
 //  274   ADCCON1 = HAL_ADC_STSEL | HAL_ADC_RAND_GEN | 0x03;
-        MOV     0xb4,#0x3f
 //  275   ADCCON2 = (reference) | HAL_ADC_DEC_RATE | HAL_ADC_SCHN;
-        MOV     A,#0xf
-        ORL     A,R1
-        MOV     0xb5,A
 //  276   /*
 //  277   *  After reset, the first ADC reading of the extra conversion always reads GND level.
 //  278   *  We will do a few dummy conversions to bypass this bug.
 //  279   */
 //  280   tmp = ADCL;     /* read ADCL,ADCH to clear EOC */
-        LCALL   ?Subroutine2 & 0xFFFF
 //  281   tmp = ADCH;
 //  282   ADCCON3 = (reference) | HAL_ADC_DEC_RATE | HAL_ADC_ECHN;
-??CrossCallReturnLabel_2:
-        MOV     A,#0xc
-        ORL     A,R1
-        MOV     R0,A
-        MOV     0xb6,R0
 //  283   while ((ADCCON1 & HAL_ADC_EOC) != HAL_ADC_EOC);   /* Wait for conversion */
-??HalAdcSetReference_0:
-        MOV     A,0xb4
-        MOV     C,0xE0 /* A   */.7
-        JNC     ??HalAdcSetReference_0
 //  284   tmp = ADCL;     /* read ADCL,ADCH to clear EOC */
-        MOV     A,0xba
-        LCALL   ??Subroutine3_0 & 0xFFFF
 //  285   tmp = ADCH;
 //  286   ADCCON3 = (reference) | HAL_ADC_DEC_RATE | HAL_ADC_ECHN;
-??CrossCallReturnLabel_5:
-        MOV     0xb6,R0
 //  287   while ((ADCCON1 & HAL_ADC_EOC) != HAL_ADC_EOC);   /* Wait for conversion */
-??HalAdcSetReference_1:
-        MOV     A,0xb4
-        MOV     C,0xE0 /* A   */.7
-        JNC     ??HalAdcSetReference_1
 //  288   tmp = ADCL;     /* read ADCL,ADCH to clear EOC */
-        LJMP    ?Subroutine0 & 0xFFFF
-        CFI EndBlock cfiBlock4
-        REQUIRE ADCCON1
-        REQUIRE ADCCON2
-        REQUIRE ADCL
-        REQUIRE ADCH
-        REQUIRE ADCCON3
 //  289   tmp = ADCH;
 //  290 #endif
 //  291 }
-
-        RSEG BANKED_CODE:CODE:NOROOT(0)
-?Subroutine2:
-        CFI Block cfiCond5 Using cfiCommon0
-        CFI NoFunction
-        CFI Conditional ??CrossCallReturnLabel_0
-        CFI DPL0 Frame(CFA_SP, 4)
-        CFI DPH0 Frame(CFA_SP, 5)
-        CFI CFA_SP SP+-5
-        CFI CFA_XSP16 add(XSP16, 1)
-        CFI Block cfiCond6 Using cfiCommon0
-        CFI (cfiCond6) NoFunction
-        CFI (cfiCond6) Conditional ??CrossCallReturnLabel_1
-        CFI (cfiCond6) R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
-        CFI (cfiCond6) VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
-        CFI (cfiCond6) V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
-        CFI (cfiCond6) V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
-        CFI (cfiCond6) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
-        CFI (cfiCond6) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
-        CFI (cfiCond6) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
-        CFI (cfiCond6) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
-        CFI (cfiCond6) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
-        CFI (cfiCond6) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
-        CFI (cfiCond6) CFA_SP SP+0
-        CFI (cfiCond6) CFA_XSP16 add(XSP16, 11)
-        CFI Block cfiCond7 Using cfiCommon0
-        CFI (cfiCond7) NoFunction
-        CFI (cfiCond7) Conditional ??CrossCallReturnLabel_2
-        CFI (cfiCond7) DPL0 Frame(CFA_SP, 4)
-        CFI (cfiCond7) DPH0 Frame(CFA_SP, 5)
-        CFI (cfiCond7) CFA_SP SP+-5
-        CFI (cfiCond7) CFA_XSP16 add(XSP16, 1)
-        CFI Block cfiPicker8 Using cfiCommon1
-        CFI (cfiPicker8) NoFunction
-        CFI (cfiPicker8) Picker
-        MOV     A,0xba
-        MOV     DPL,?XSP + 0
-        MOV     DPH,?XSP + 1
-        CFI EndBlock cfiCond5
-        CFI EndBlock cfiCond6
-        CFI EndBlock cfiCond7
-        CFI EndBlock cfiPicker8
-        REQUIRE ??Subroutine3_0
-        ; // Fall through to label ??Subroutine3_0
-
-        RSEG BANKED_CODE:CODE:NOROOT(0)
-??Subroutine3_0:
-        CFI Block cfiCond9 Using cfiCommon0
-        CFI NoFunction
-        CFI Conditional ??CrossCallReturnLabel_3
-        CFI DPL0 Frame(CFA_SP, 4)
-        CFI DPH0 Frame(CFA_SP, 5)
-        CFI CFA_SP SP+-5
-        CFI CFA_XSP16 add(XSP16, 1)
-        CFI Block cfiCond10 Using cfiCommon0
-        CFI (cfiCond10) NoFunction
-        CFI (cfiCond10) Conditional ??CrossCallReturnLabel_4
-        CFI (cfiCond10) DPL0 Frame(CFA_SP, 4)
-        CFI (cfiCond10) DPH0 Frame(CFA_SP, 5)
-        CFI (cfiCond10) CFA_SP SP+-5
-        CFI (cfiCond10) CFA_XSP16 add(XSP16, 1)
-        CFI Block cfiCond11 Using cfiCommon0
-        CFI (cfiCond11) NoFunction
-        CFI (cfiCond11) Conditional ??CrossCallReturnLabel_4
-        CFI (cfiCond11) DPL0 Frame(CFA_SP, 4)
-        CFI (cfiCond11) DPH0 Frame(CFA_SP, 5)
-        CFI (cfiCond11) CFA_SP SP+-5
-        CFI (cfiCond11) CFA_XSP16 add(XSP16, 1)
-        CFI Block cfiCond12 Using cfiCommon0
-        CFI (cfiCond12) NoFunction
-        CFI (cfiCond12) Conditional ??CrossCallReturnLabel_5
-        CFI (cfiCond12) DPL0 Frame(CFA_SP, 4)
-        CFI (cfiCond12) DPH0 Frame(CFA_SP, 5)
-        CFI (cfiCond12) CFA_SP SP+-5
-        CFI (cfiCond12) CFA_XSP16 add(XSP16, 1)
-        CFI Block cfiCond13 Using cfiCommon0
-        CFI (cfiCond13) NoFunction
-        CFI (cfiCond13) Conditional ??CrossCallReturnLabel_0
-        CFI (cfiCond13) DPL0 Frame(CFA_SP, 4)
-        CFI (cfiCond13) DPH0 Frame(CFA_SP, 5)
-        CFI (cfiCond13) CFA_SP SP+-5
-        CFI (cfiCond13) CFA_XSP16 add(XSP16, 1)
-        CFI Block cfiCond14 Using cfiCommon0
-        CFI (cfiCond14) NoFunction
-        CFI (cfiCond14) Conditional ??CrossCallReturnLabel_1
-        CFI (cfiCond14) R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
-        CFI (cfiCond14) VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
-        CFI (cfiCond14) V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
-        CFI (cfiCond14) V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
-        CFI (cfiCond14) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
-        CFI (cfiCond14) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
-        CFI (cfiCond14) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
-        CFI (cfiCond14) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
-        CFI (cfiCond14) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
-        CFI (cfiCond14) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
-        CFI (cfiCond14) CFA_SP SP+0
-        CFI (cfiCond14) CFA_XSP16 add(XSP16, 11)
-        CFI Block cfiCond15 Using cfiCommon0
-        CFI (cfiCond15) NoFunction
-        CFI (cfiCond15) Conditional ??CrossCallReturnLabel_2
-        CFI (cfiCond15) DPL0 Frame(CFA_SP, 4)
-        CFI (cfiCond15) DPH0 Frame(CFA_SP, 5)
-        CFI (cfiCond15) CFA_SP SP+-5
-        CFI (cfiCond15) CFA_XSP16 add(XSP16, 1)
-        CFI Block cfiPicker16 Using cfiCommon1
-        CFI (cfiPicker16) NoFunction
-        CFI (cfiPicker16) Picker
-        MOVX    @DPTR,A
-        MOV     A,0xbb
-        MOVX    @DPTR,A
-        RET
-        CFI EndBlock cfiCond9
-        CFI EndBlock cfiCond10
-        CFI EndBlock cfiCond11
-        CFI EndBlock cfiCond12
-        CFI EndBlock cfiCond13
-        CFI EndBlock cfiCond14
-        CFI EndBlock cfiCond15
-        CFI EndBlock cfiPicker16
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock2
 //  292 
 //  293 /**************************************************************************************************
 //  294  * @fn      HalAdcCheckVdd
@@ -1127,7 +629,7 @@ HalAdcSetReference:
         RSEG BANKED_CODE:CODE:NOROOT(0)
 //  303 bool HalAdcCheckVdd (uint8 limit)
 HalAdcCheckVdd:
-        CFI Block cfiBlock17 Using cfiCommon0
+        CFI Block cfiBlock3 Using cfiCommon0
         CFI Function HalAdcCheckVdd
         CODE
 //  304 {
@@ -1212,8 +714,9 @@ HalAdcCheckVdd:
 ??HalAdcCheckVdd_1:
         MOV     R1,#0x0
 ??HalAdcCheckVdd_2:
-        LJMP    ?Subroutine1 & 0xFFFF
-        CFI EndBlock cfiBlock17
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
         REQUIRE ADCCON3
         REQUIRE _A_TCON
         REQUIRE ADCL
@@ -1249,13 +752,13 @@ HalAdcCheckVdd:
 //  328 /**************************************************************************************************
 //  329 **************************************************************************************************/
 // 
-// 362 bytes in segment BANKED_CODE
-//  24 bytes in segment BANK_RELAYS
-//  18 bytes in segment CODE_C
-//   7 bytes in segment SFR_AN
+// 84 bytes in segment BANKED_CODE
+// 24 bytes in segment BANK_RELAYS
+// 18 bytes in segment CODE_C
+//  4 bytes in segment SFR_AN
 // 
-// 404 bytes of CODE memory
-//   0 bytes of DATA memory (+ 7 bytes shared)
+// 126 bytes of CODE memory
+//   0 bytes of DATA memory (+ 4 bytes shared)
 //
 //Errors: none
 //Warnings: none

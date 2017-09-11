@@ -13,7 +13,6 @@
 #define GENERICAPP_CLUSTERID            1
 
 #define USR_EVENT_UART					0x01
-#define USR_EVENT_POLL					0x02
 
 #define UART_PORT						0
 #define UART_BUF_SIZE					128

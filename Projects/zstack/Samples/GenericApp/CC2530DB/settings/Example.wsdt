@@ -3,7 +3,7 @@
 <Workspace>
   <ConfigDictionary>
     
-  <CurrentConfigs><Project>Example/CoordinatorEB-Pro</Project></CurrentConfigs></ConfigDictionary>
+  <CurrentConfigs><Project>Example/EndDeviceEB-Pro</Project></CurrentConfigs></ConfigDictionary>
   <Desktop>
     <Static>
       <Workspace>
@@ -12,7 +12,7 @@
           
           
           
-        <Column0>205</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+        <Column0>222</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
       </Workspace>
       <Build>
         
@@ -21,11 +21,11 @@
         
       <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1155</ColumnWidth1><ColumnWidth2>308</ColumnWidth2><ColumnWidth3>77</ColumnWidth3></Build>
       <TerminalIO/>
-    </Static>
+    <Disassembly><MixedMode>1</MixedMode><CodeCovShow>1</CodeCovShow><InstrProfShow>1</InstrProfShow></Disassembly><Debug-Log><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1541</ColumnWidth1></Debug-Log></Static>
     <Windows>
       
       
-    <Wnd2>
+    <Wnd0>
         <Tabs>
           <Tab>
             <Identity>TabID-20714-5732</Identity>
@@ -37,7 +37,7 @@
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
         <Tabs>
           <Tab>
             <Identity>TabID-3169-5856</Identity>
@@ -45,22 +45,22 @@
             <Factory>Build</Factory>
             <Session/>
           </Tab>
-        </Tabs>
+        <Tab><Identity>TabID-25761-1339</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+      <SelectedTab>0</SelectedTab></Wnd1></Windows>
     <Editor>
       
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\Download\&#x7B2C;5&#x7Ae0; zigbee&#x534F;&#x8BAe;&#x6808;&#x5e94;&#x7528;&#x4e0e;&#x7eC4;&#x7F51;\3.&#x57FA;&#x4e8e;GenericApp&#x65e0;&#x7eBF;&#x6536;&#x53D1;&#x5B9e;&#x9A8C;\Projects\zstack\ZMain\TI2530DB\ZMain.c</Filename><XPos>0</XPos><YPos>202</YPos><SelStart>4256</SelStart><SelEnd>4256</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\Coordinator.c</Filename><XPos>0</XPos><YPos>79</YPos><SelStart>2702</SelStart><SelEnd>2702</SelEnd></Tab><ActiveTab>1</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\Download\&#x7B2C;5&#x7Ae0; zigbee&#x534F;&#x8BAe;&#x6808;&#x5e94;&#x7528;&#x4e0e;&#x7eC4;&#x7F51;\3.&#x57FA;&#x4e8e;GenericApp&#x65e0;&#x7eBF;&#x6536;&#x53D1;&#x5B9e;&#x9A8C;\Components\osal\common\OSAL.c</Filename><XPos>0</XPos><YPos>1022</YPos><SelStart>26950</SelStart><SelEnd>26950</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\Download\&#x7B2C;5&#x7Ae0; zigbee&#x534F;&#x8BAe;&#x6808;&#x5e94;&#x7528;&#x4e0e;&#x7eC4;&#x7F51;\3.&#x57FA;&#x4e8e;GenericApp&#x65e0;&#x7eBF;&#x6536;&#x53D1;&#x5B9e;&#x9A8C;\Components\mac\low_level\srf04\single_chip\mac_mcu.c</Filename><XPos>0</XPos><YPos>672</YPos><SelStart>22694</SelStart><SelEnd>22694</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\Download\&#x7B2C;5&#x7Ae0; zigbee&#x534F;&#x8BAe;&#x6808;&#x5e94;&#x7528;&#x4e0e;&#x7eC4;&#x7F51;\3.&#x57FA;&#x4e8e;GenericApp&#x65e0;&#x7eBF;&#x6536;&#x53D1;&#x5B9e;&#x9A8C;\Components\osal\common\OSAL_Timers.c</Filename><XPos>0</XPos><YPos>136</YPos><SelStart>5074</SelStart><SelEnd>5074</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\COMPONENTS\hal\target\CC2530EB\hal_board_cfg.h</Filename><XPos>0</XPos><YPos>69</YPos><SelStart>309</SelStart><SelEnd>309</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\ZMain\TI2530DB\ZMain.c</Filename><XPos>0</XPos><YPos>101</YPos><SelStart>4048</SelStart><SelEnd>4048</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\Download\&#x7B2C;5&#x7Ae0; zigbee&#x534F;&#x8BAe;&#x6808;&#x5e94;&#x7528;&#x4e0e;&#x7eC4;&#x7F51;\3.&#x57FA;&#x4e8e;GenericApp&#x65e0;&#x7eBF;&#x6536;&#x53D1;&#x5B9e;&#x9A8C;\Projects\zstack\ZMain\TI2530DB\ZMain.c</Filename><XPos>0</XPos><YPos>202</YPos><SelStart>4256</SelStart><SelEnd>4256</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\Coordinator.c</Filename><XPos>0</XPos><YPos>86</YPos><SelStart>3065</SelStart><SelEnd>3065</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\Enddevice.c</Filename><XPos>0</XPos><YPos>99</YPos><SelStart>3251</SelStart><SelEnd>3251</SelEnd></Tab><ActiveTab>2</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\ZMain\TI2530DB\ZMain.c</Filename><XPos>0</XPos><YPos>102</YPos><SelStart>4048</SelStart><SelEnd>4048</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\osal\common\OSAL.c</Filename><XPos>0</XPos><YPos>241</YPos><SelStart>7497</SelStart><SelEnd>7497</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\hal\target\CC2530EB\hal_uart.c</Filename><XPos>0</XPos><YPos>126</YPos><SelStart>4627</SelStart><SelEnd>4627</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-00e0e118><key>iaridepm.enu1</key></Toolbar-00e0e118></Sizes></Row0><Row1><Sizes/></Row1><Row2><Sizes/></Row2></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>438</Bottom><Right>296</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>125000</sizeHorzCX><sizeHorzCY>244499</sizeHorzCY><sizeVertCX>186250</sizeVertCX><sizeVertCY>537897</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>335</Bottom><Right>1602</Right><x>-2</x><y>-2</y><xscreen>1604</xscreen><yscreen>337</yscreen><sizeHorzCX>1002500</sizeHorzCX><sizeHorzCY>411980</sizeHorzCY><sizeVertCX>125000</sizeVertCX><sizeVertCY>244499</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-01b0e118><key>iaridepm.enu1</key></Toolbar-01b0e118></Sizes></Row0><Row1><Sizes/></Row1><Row2><Sizes/></Row2></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>532</Bottom><Right>296</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>125000</sizeHorzCX><sizeHorzCY>244499</sizeHorzCY><sizeVertCX>186250</sizeVertCX><sizeVertCY>652812</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>241</Bottom><Right>1602</Right><x>-2</x><y>-2</y><xscreen>1604</xscreen><yscreen>243</yscreen><sizeHorzCX>1002500</sizeHorzCX><sizeHorzCY>297066</sizeHorzCY><sizeVertCX>125000</sizeVertCX><sizeVertCY>244499</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 

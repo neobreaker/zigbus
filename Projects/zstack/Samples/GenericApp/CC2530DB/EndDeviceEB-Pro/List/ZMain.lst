@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         21/Aug/2017  15:00:28 #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         11/Sep/2017  15:08:36 #
 # Copyright 2004-2011 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -9,18 +9,14 @@
 #    Calling convention =  xdata reentrant                                    #
 #    Constant location  =  data_rom                                           #
 #    Dptr setup         =  1,16                                               #
-#    Source file        =  F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGen #
-#                          ericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\ZMain\TI2530DB #
-#                          \ZMain.c                                           #
-#    Command line       =  -f "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓ #
-#                          ÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Ge #
-#                          nericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev #
-#                          .cfg" (-DCPU32MHZ -DROOT=__near_func               #
-#                          -DBLINK_LEDS) -f "F:\Download\µÚ5ÕÂ                #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\Tools\CC2530DB\f8wConfig.cfg" (-DSECURE=0     #
-#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#    Source file        =  F:\test\zigbus\Projects\zstack\ZMain\TI2530DB\ZMai #
+#                          n.c                                                #
+#    Command line       =  -f F:\test\zigbus\Projects\zstack\Samples\GenericA #
+#                          pp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg   #
+#                          (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f    #
+#                          F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg     #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
 #                          -DDEFAULT_CHANLIST=0x00000800                      #
 #                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
 #                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
@@ -40,110 +36,74 @@
 #                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
 #                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
 #                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\ZMain\TI2530D #
-#                          B\ZMain.c" -D ZIGBEEPRO -D NWK_AUTO_POLL -D        #
-#                          ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC  #
-#                          -D LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC        #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\EndDeviceEB-Pro\List\" -lA          #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\EndDeviceEB-Pro\List\"              #
-#                          --diag_suppress Pe001,Pa010 -o "F:\Download\µÚ5ÕÂ  #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\EndD #
-#                          eviceEB-Pro\Obj\" -e --debug --core=plain          #
-#                          --dptr=16,1 --data_model=large                     #
-#                          --code_model=banked --calling_convention=xdata_ree #
-#                          ntrant --place_constants=data_rom                  #
-#                          --nr_virtual_regs 16 -I "F:\Download\µÚ5ÕÂ         #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\"    #
-#                          -I "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓ #
-#                          ÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Ge #
-#                          nericApp\CC2530DB\..\SOURCE\" -I                   #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I        #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I   #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLU #
-#                          DE\" -I "F:\Download\µÚ5ÕÂ                         #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\" -I     #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\ #
-#                          CCSOC\" -I "F:\Download\µÚ5ÕÂ                      #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I            #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\ #
-#                          " -I "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.» #
-#                          ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\ #
-#                          GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\STAC #
-#                          K\NWK\" -I "F:\Download\µÚ5ÕÂ                      #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\STACK\SEC\" -I               #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAP #
-#                          I\" -I "F:\Download\µÚ5ÕÂ                          #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\STACK\SYS\" -I               #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO #
-#                          \" -I "F:\Download\µÚ5ÕÂ                           #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\ZMAC\F8W\" -I                #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\"    #
-#                          -I "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓ #
-#                          ÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Ge #
-#                          nericApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVIC #
-#                          ES\SADDR\" -I "F:\Download\µÚ5ÕÂ                   #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\SERVICES\SDATA\" -I          #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLU #
-#                          DE\" -I "F:\Download\µÚ5ÕÂ                         #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\" -I          #
-#                          "F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGe #
-#                          nericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Gener #
-#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L #
-#                          EVEL\srf04\" -I "F:\Download\µÚ5ÕÂ                 #
-#                          zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑ #
-#                          é\Projects\zstack\Samples\GenericApp\CC2530DB\..\. #
-#                          .\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_C #
-#                          HIP\" -Ohz --require_prototypes                    #
-#    List file          =  F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGen #
-#                          ericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Generi #
-#                          cApp\CC2530DB\EndDeviceEB-Pro\List\ZMain.lst       #
-#    Object file        =  F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGen #
-#                          ericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\Samples\Generi #
-#                          cApp\CC2530DB\EndDeviceEB-Pro\Obj\ZMain.r51        #
+#                          F:\test\zigbus\Projects\zstack\ZMain\TI2530DB\ZMai #
+#                          n.c -D ZIGBEEPRO -D NWK_AUTO_POLL -D ZTOOL_P1 -D   #
+#                          MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D           #
+#                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC           #
+#                          F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\EndDeviceEB-Pro\List\ -lA                 #
+#                          F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\EndDeviceEB-Pro\List\ --diag_suppress     #
+#                          Pe001,Pa010 -o F:\test\zigbus\Projects\zstack\Samp #
+#                          les\GenericApp\CC2530DB\EndDeviceEB-Pro\Obj\ -e    #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I F:\test\zigbus\Projects\zstack\Samples\GenericA #
+#                          pp\CC2530DB\ -I F:\test\zigbus\Projects\zstack\Sam #
+#                          ples\GenericApp\CC2530DB\..\SOURCE\ -I             #
+#                          F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I               #
+#                          F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\..\..\..\..\..\COMPONENTS\MT\ -I          #
+#                          F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\    #
+#                          -I F:\test\zigbus\Projects\zstack\Samples\GenericA #
+#                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\C #
+#                          C2530EB\ -I F:\test\zigbus\Projects\zstack\Samples #
+#                          \GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSA #
+#                          L\MCU\CCSOC\ -I F:\test\zigbus\Projects\zstack\Sam #
+#                          ples\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS #
+#                          \OSAL\INCLUDE\ -I F:\test\zigbus\Projects\zstack\S #
+#                          amples\GenericApp\CC2530DB\..\..\..\..\..\COMPONEN #
+#                          TS\STACK\AF\ -I F:\test\zigbus\Projects\zstack\Sam #
+#                          ples\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS #
+#                          \STACK\NWK\ -I F:\test\zigbus\Projects\zstack\Samp #
+#                          les\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          STACK\SEC\ -I F:\test\zigbus\Projects\zstack\Sampl #
+#                          es\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\S #
+#                          TACK\SAPI\ -I F:\test\zigbus\Projects\zstack\Sampl #
+#                          es\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\S #
+#                          TACK\SYS\ -I F:\test\zigbus\Projects\zstack\Sample #
+#                          s\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ST #
+#                          ACK\ZDO\ -I F:\test\zigbus\Projects\zstack\Samples #
+#                          \GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMA #
+#                          C\F8W\ -I F:\test\zigbus\Projects\zstack\Samples\G #
+#                          enericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\ #
+#                           -I F:\test\zigbus\Projects\zstack\Samples\Generic #
+#                          App\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SA #
+#                          DDR\ -I F:\test\zigbus\Projects\zstack\Samples\Gen #
+#                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICE #
+#                          S\SDATA\ -I F:\test\zigbus\Projects\zstack\Samples #
+#                          \GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC #
+#                          \INCLUDE\ -I F:\test\zigbus\Projects\zstack\Sample #
+#                          s\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MA #
+#                          C\HIGH_LEVEL\ -I F:\test\zigbus\Projects\zstack\Sa #
+#                          mples\GenericApp\CC2530DB\..\..\..\..\..\COMPONENT #
+#                          S\MAC\LOW_LEVEL\srf04\ -I                          #
+#                          F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\s #
+#                          rf04\SINGLE_CHIP\ -Ohz --require_prototypes        #
+#    List file          =  F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\EndDeviceEB-Pro\List\ZMain.lst            #
+#    Object file        =  F:\test\zigbus\Projects\zstack\Samples\GenericApp\ #
+#                          CC2530DB\EndDeviceEB-Pro\Obj\ZMain.r51             #
 #                                                                             #
 #                                                                             #
 ###############################################################################
 
-F:\Download\µÚ5ÕÂ zigbeeĞ­ÒéÕ»Ó¦ÓÃÓë×éÍø\3.»ùÓÚGenericAppÎŞÏßÊÕ·¢ÊµÑé\Projects\zstack\ZMain\TI2530DB\ZMain.c
+F:\test\zigbus\Projects\zstack\ZMain\TI2530DB\ZMain.c
       1          /**************************************************************************************************
       2            Filename:       ZMain.c
       3            Revised:        $Date: 2009-09-17 20:35:33 -0700 (Thu, 17 Sep 2009) $

@@ -84,9 +84,8 @@ void GenericApp_Init( byte task_id )
     uartconfig.callBackFunc = rxCB;
     HalUARTOpen(UART_PORT, &uartconfig);
 
-	//osal_start_timerEx(GenericApp_TaskID, USR_EVENT_POLL, 5);
-
 }
+
 
 UINT16 GenericApp_ProcessEvent( byte task_id, UINT16 events )
 {
@@ -115,20 +114,15 @@ UINT16 GenericApp_ProcessEvent( byte task_id, UINT16 events )
     {
         if(uartbuf_len == 8)
         {
-            //GenericApp_SendTheUart(uartbuf, uartbuf_len);
-            update_modbus_req(uartbuf, uartbuf_len);
-	    	proxy_send_response(uartbuf[0]);
+            GenericApp_SendTheUart(uartbuf, uartbuf_len);
+            //update_modbus_req(uartbuf, uartbuf_len);
+	    	//proxy_send_response(uartbuf[0]);
         }
         uartbuf_len = 0;
         osal_stop_timerEx(GenericApp_TaskID, USR_EVENT_UART);
         return (events ^ USR_EVENT_UART);
     }
-/*
-	if(events & USR_EVENT_POLL)
-    {
-		osal_stop_timerEx(GenericApp_TaskID, USR_EVENT_POLL);
-	}
-*/
+
     return 0;
 }
 
@@ -151,8 +145,8 @@ void GenericApp_MessageMSGCB(afIncomingMSGPacket_t *pkt)
 
             }
 
-            //HalUARTWrite(0, pkt->cmd.Data+4, pkt->cmd.DataLength-4);
-            update_modbus_rcv(pkt->cmd.Data+4, pkt->cmd.DataLength-4);
+            HalUARTWrite(0, pkt->cmd.Data+4, pkt->cmd.DataLength-4);
+            //update_modbus_rcv(pkt->cmd.Data+4, pkt->cmd.DataLength-4);
             
             break;
     }
@@ -210,12 +204,13 @@ static void rxCB(uint8 port, uint8 event)
     if(numread > 0)
     {
         uartbuf_len += numread;
-        osal_start_timerEx(GenericApp_TaskID, USR_EVENT_UART, 1);
+        osal_start_timerEx(GenericApp_TaskID, USR_EVENT_UART, 2);
 
     }
 
 }
 
+/*
 static void update_modbus_req(uint8* buf, uint16 len)
 {
 	if(len <= 0 || buf[0] <= 0 || buf[0] > MODBUS_SLAVE_NUM)
@@ -253,7 +248,7 @@ static void update_modbus_rcv(uint8* buf, uint16 len)
 	g_modrcv[buf[0]-1].len = len;
 }
 
-/*
+
 void uart_cmd(unsigned char *buf, int len)
 {
     uint8 cmd = 0;

@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        18/Aug/2017  10:18:27 /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        11/Sep/2017  15:08:16 /
 // Copyright 2004-2011 IAR Systems AB.                                        /
 //                                                                            /
 //    Core               =  plain                                             /
@@ -9,18 +9,14 @@
 //    Calling convention =  xdata reentrant                                   /
 //    Constant location  =  data_rom                                          /
 //    Dptr setup         =  1,16                                              /
-//    Source file        =  F:\Download\第5章 zigbee协议栈应用与组网\3.基于Ge /
-//                          nericApp无线收发实验\Components\mac\low_level\srf /
-//                          04\single_chip\mac_radio_defs.c                   /
-//    Command line       =  -f "F:\Download\第5章 zigbee协议栈应用与组网\3.基 /
-//                          于GenericApp无线收发实验\Projects\zstack\Samples\ /
-//                          GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEn /
-//                          dev.cfg" (-DCPU32MHZ -DROOT=__near_func           /
-//                          -DBLINK_LEDS) -f "F:\Download\第5章               /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\Tools\CC2530DB\f8wConfig.cfg" (-DSECURE=0  /
-//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//    Source file        =  F:\test\zigbus\Components\mac\low_level\srf04\sin /
+//                          gle_chip\mac_radio_defs.c                         /
+//    Command line       =  -f F:\test\zigbus\Projects\zstack\Samples\Generic /
+//                          App\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg /
+//                           (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f  /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg   /
+//                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR     /
 //                          -DDEFAULT_CHANLIST=0x00000800                     /
 //                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
 //                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
@@ -40,106 +36,70 @@
 //                          "-DCONST=const __code" -DGENERIC=__generic        /
 //                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
 //                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
-//                          -DREJOIN_POLL_RATE=440 "F:\Download\第5章         /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Components\mac\low_level\srf04\single_chip\mac /
-//                          _radio_defs.c" -D ZIGBEEPRO -D NWK_AUTO_POLL -D   /
-//                          ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D             /
-//                          MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D             /
-//                          xPOWER_SAVING -lC "F:\Download\第5章              /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\En /
-//                          dDeviceEB-Pro\List\" -lA "F:\Download\第5章       /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\En /
-//                          dDeviceEB-Pro\List\" --diag_suppress Pe001,Pa010  /
-//                          -o "F:\Download\第5章 zigbee协议栈应用与组网\3.基 /
-//                          于GenericApp无线收发实验\Projects\zstack\Samples\ /
-//                          GenericApp\CC2530DB\EndDeviceEB-Pro\Obj\" -e      /
+//                          -DREJOIN_POLL_RATE=440 F:\test\zigbus\Components\ /
+//                          mac\low_level\srf04\single_chip\mac_radio_defs.c  /
+//                          -D ZIGBEEPRO -D NWK_AUTO_POLL -D ZTOOL_P1 -D      /
+//                          MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D          /
+//                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC          /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\EndDeviceEB-Pro\List\ -lA               /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\EndDeviceEB-Pro\List\ --diag_suppress   /
+//                          Pe001,Pa010 -o F:\test\zigbus\Projects\zstack\Sam /
+//                          ples\GenericApp\CC2530DB\EndDeviceEB-Pro\Obj\ -e  /
 //                          --debug --core=plain --dptr=16,1                  /
 //                          --data_model=large --code_model=banked            /
 //                          --calling_convention=xdata_reentrant              /
 //                          --place_constants=data_rom --nr_virtual_regs 16   /
-//                          -I "F:\Download\第5章 zigbee协议栈应用与组网\3.基 /
-//                          于GenericApp无线收发实验\Projects\zstack\Samples\ /
-//                          GenericApp\CC2530DB\" -I "F:\Download\第5章       /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \SOURCE\" -I "F:\Download\第5章                   /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\ZMAIN\TI2530DB\" -I "F:\Download\第5章     /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\MT\" -I                   /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\IN /
-//                          CLUDE\" -I "F:\Download\第5章                     /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\" -I  /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\M /
-//                          CU\CCSOC\" -I "F:\Download\第5章                  /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I         /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
+//                          -I F:\test\zigbus\Projects\zstack\Samples\Generic /
+//                          App\CC2530DB\ -I F:\test\zigbus\Projects\zstack\S /
+//                          amples\GenericApp\CC2530DB\..\SOURCE\ -I          /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I             /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\MT\ -I        /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\  /
+//                          -I F:\test\zigbus\Projects\zstack\Samples\Generic /
+//                          App\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET /
+//                          \CC2530EB\ -I F:\test\zigbus\Projects\zstack\Samp /
+//                          les\GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \OSAL\MCU\CCSOC\ -I F:\test\zigbus\Projects\zstac /
+//                          k\Samples\GenericApp\CC2530DB\..\..\..\..\..\COMP /
+//                          ONENTS\OSAL\INCLUDE\ -I                           /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\ -I  /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK\    /
+//                          -I F:\test\zigbus\Projects\zstack\Samples\Generic /
+//                          App\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC\ /
+//                           -I F:\test\zigbus\Projects\zstack\Samples\Generi /
+//                          cApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAP /
+//                          I\ -I F:\test\zigbus\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\S /
+//                          YS\ -I F:\test\zigbus\Projects\zstack\Samples\Gen /
 //                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ /
-//                          AF\" -I "F:\Download\第5章                        /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\STACK\NWK\" -I            /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ /
-//                          SEC\" -I "F:\Download\第5章                       /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\STACK\SAPI\" -I           /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ /
-//                          SYS\" -I "F:\Download\第5章                       /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\STACK\ZDO\" -I            /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F /
-//                          8W\" -I "F:\Download\第5章                        /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\ZMAC\" -I                 /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVIC /
-//                          ES\SADDR\" -I "F:\Download\第5章                  /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\SERVICES\SDATA\" -I       /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\IN /
-//                          CLUDE\" -I "F:\Download\第5章                     /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\" -I       /
-//                          "F:\Download\第5章 zigbee协议栈应用与组网\3.基于G /
-//                          enericApp无线收发实验\Projects\zstack\Samples\Gen /
-//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LO /
-//                          W_LEVEL\srf04\" -I "F:\Download\第5章             /
-//                          zigbee协议栈应用与组网\3.基于GenericApp无线收发实 /
-//                          验\Projects\zstack\Samples\GenericApp\CC2530DB\.. /
-//                          \..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGL /
-//                          E_CHIP\" -Ohz --require_prototypes                /
-//    List file          =  F:\Download\第5章 zigbee协议栈应用与组网\3.基于Ge /
-//                          nericApp无线收发实验\Projects\zstack\Samples\Gene /
-//                          ricApp\CC2530DB\EndDeviceEB-Pro\List\mac_radio_de /
-//                          fs.s51                                            /
+//                          ZDO\ -I F:\test\zigbus\Projects\zstack\Samples\Ge /
+//                          nericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\ /
+//                          F8W\ -I F:\test\zigbus\Projects\zstack\Samples\Ge /
+//                          nericApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\ /
+//                           -I F:\test\zigbus\Projects\zstack\Samples\Generi /
+//                          cApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\ /
+//                          SADDR\ -I F:\test\zigbus\Projects\zstack\Samples\ /
+//                          GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\SER /
+//                          VICES\SDATA\ -I F:\test\zigbus\Projects\zstack\Sa /
+//                          mples\GenericApp\CC2530DB\..\..\..\..\..\COMPONEN /
+//                          TS\MAC\INCLUDE\ -I F:\test\zigbus\Projects\zstack /
+//                          \Samples\GenericApp\CC2530DB\..\..\..\..\..\COMPO /
+//                          NENTS\MAC\HIGH_LEVEL\ -I                          /
+//                          F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL /
+//                          \srf04\ -I F:\test\zigbus\Projects\zstack\Samples /
+//                          \GenericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MA /
+//                          C\LOW_LEVEL\srf04\SINGLE_CHIP\ -Ohz               /
+//                          --require_prototypes                              /
+//    List file          =  F:\test\zigbus\Projects\zstack\Samples\GenericApp /
+//                          \CC2530DB\EndDeviceEB-Pro\List\mac_radio_defs.s51 /
 //                                                                            /
 //                                                                            /
 ///////////////////////////////////////////////////////////////////////////////
@@ -294,7 +254,7 @@ macRadioTurnOnPower SYMBOL "macRadioTurnOnPower"
         EXTERN macChipVersion
         EXTERN macPib
 
-// F:\Download\第5章 zigbee协议栈应用与组网\3.基于GenericApp无线收发实验\Components\mac\low_level\srf04\single_chip\mac_radio_defs.c
+// F:\test\zigbus\Components\mac\low_level\srf04\single_chip\mac_radio_defs.c
 //    1 /**************************************************************************************************
 //    2   Filename:       mac_radio_defs.c
 //    3   Revised:        $Date: 2010-01-06 14:40:42 -0800 (Wed, 06 Jan 2010) $

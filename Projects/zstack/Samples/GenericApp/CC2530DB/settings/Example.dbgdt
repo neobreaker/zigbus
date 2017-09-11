@@ -19,19 +19,19 @@
           
           
           
-        <Column0>299</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+        <Column0>292</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
       </Workspace>
       <Disassembly>
         
         
         
       <PreferedWindows><Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><MixedMode>1</MixedMode><CodeCovShow>1</CodeCovShow><InstrProfShow>1</InstrProfShow></Disassembly>
-    <Watch><Format><struct_types/><watch_formats><Fmt><Key>{W}Watch-0:uartbuf_len</Key><Value>3</Value></Fmt></watch_formats></Format><PreferedWindows><Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><Column0>100</Column0><Column1>188</Column1><Column2>100</Column2><Column3>100</Column3></Watch></Static>
+    <Watch><Format><struct_types/><watch_formats><Fmt><Key>{W}Watch-0:uartbuf_len</Key><Value>3</Value></Fmt></watch_formats></Format><PreferedWindows><Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><Column0>135</Column0><Column1>188</Column1><Column2>100</Column2><Column3>100</Column3></Watch></Static>
     <Windows>
       
       
       
-    <Wnd4>
+    <Wnd0>
         <Tabs>
           <Tab>
             <Identity>TabID-5637-26526</Identity>
@@ -47,7 +47,7 @@
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd4><Wnd5>
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
         <Tabs>
           <Tab>
             <Identity>TabID-16385-26529</Identity>
@@ -55,24 +55,24 @@
             <Factory>Workspace</Factory>
             <Session>
               
-            <NodeDict><ExpandedNode>Example</ExpandedNode><ExpandedNode>Example/App</ExpandedNode></NodeDict></Session>
+            <NodeDict><ExpandedNode>Example</ExpandedNode><ExpandedNode>Example/App</ExpandedNode><ExpandedNode>Example/HAL</ExpandedNode><ExpandedNode>Example/HAL/Common</ExpandedNode><ExpandedNode>Example/HAL/Common/hal_drivers.c</ExpandedNode></NodeDict></Session>
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd5><Wnd6><Tabs><Tab><Identity>TabID-1831-31154</Identity><TabName>Watch</TabName><Factory>Watch</Factory><Session><Expressions><Expression><Expression>snd_buf</Expression></Expression><Expression><Expression>buf</Expression></Expression><Expression><Expression>uartbuf</Expression></Expression><Expression><Expression>uartbuf_len</Expression></Expression><Expression><Expression>g_short_addr</Expression></Expression><Expression><Expression>g_modbus_timeout</Expression></Expression><Expression><Expression>pkt</Expression></Expression></Expressions><TabId>0</TabId><Column0>100</Column0><Column1>188</Column1><Column2>100</Column2><Column3>100</Column3></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd6><Wnd7><Tabs><Tab><Identity>TabID-17758-19472</Identity><TabName>Disassembly</TabName><Factory>Disassembly</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd7></Windows>
+      <SelectedTab>0</SelectedTab></Wnd1><Wnd2><Tabs><Tab><Identity>TabID-1831-31154</Identity><TabName>Watch</TabName><Factory>Watch</Factory><Session><Expressions><Expression><Expression>snd_buf</Expression></Expression><Expression><Expression>uartbuf_len</Expression></Expression><Expression><Expression>uartbuf</Expression></Expression><Expression><Expression>uartbuf_len</Expression></Expression><Expression><Expression>g_short_addr</Expression></Expression><Expression><Expression>g_modbus_timeout</Expression></Expression><Expression><Expression>pkt</Expression></Expression><Expression><Expression>g_modreq</Expression></Expression><Expression><Expression>buf</Expression></Expression></Expressions><TabId>0</TabId><Column0>135</Column0><Column1>188</Column1><Column2>100</Column2><Column3>100</Column3></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-17758-19472</Identity><TabName>Disassembly</TabName><Factory>Disassembly</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
     <Editor>
       
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\Download\&#x7B2C;5&#x7Ae0; zigbee&#x534F;&#x8BAe;&#x6808;&#x5e94;&#x7528;&#x4e0e;&#x7eC4;&#x7F51;\3.&#x57FA;&#x4e8e;GenericApp&#x65e0;&#x7eBF;&#x6536;&#x53D1;&#x5B9e;&#x9A8C;\Projects\zstack\ZMain\TI2530DB\ZMain.c</Filename><XPos>0</XPos><YPos>109</YPos><SelStart>4077</SelStart><SelEnd>4077</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\Coordinator.c</Filename><XPos>0</XPos><YPos>93</YPos><SelStart>3285</SelStart><SelEnd>3285</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\Download\&#x7B2C;5&#x7Ae0; zigbee&#x534F;&#x8BAe;&#x6808;&#x5e94;&#x7528;&#x4e0e;&#x7eC4;&#x7F51;\3.&#x57FA;&#x4e8e;GenericApp&#x65e0;&#x7eBF;&#x6536;&#x53D1;&#x5B9e;&#x9A8C;\Projects\zstack\ZMain\TI2530DB\ZMain.c</Filename><XPos>0</XPos><YPos>202</YPos><SelStart>4256</SelStart><SelEnd>4256</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\Coordinator.c</Filename><XPos>0</XPos><YPos>86</YPos><SelStart>3065</SelStart><SelEnd>3065</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\Enddevice.c</Filename><XPos>0</XPos><YPos>99</YPos><SelStart>3251</SelStart><SelEnd>3251</SelEnd></Tab><ActiveTab>2</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\ZMain\TI2530DB\ZMain.c</Filename><XPos>0</XPos><YPos>102</YPos><SelStart>4048</SelStart><SelEnd>4048</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\osal\common\OSAL.c</Filename><XPos>0</XPos><YPos>241</YPos><SelStart>7497</SelStart><SelEnd>7497</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\hal\target\CC2530EB\hal_uart.c</Filename><XPos>0</XPos><YPos>126</YPos><SelStart>4627</SelStart><SelEnd>4627</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-00e9e118><key>iaridepm.enu1</key></Toolbar-00e9e118></Sizes></Row0><Row1><Sizes><Toolbar-0a0b4440><key>debuggergui.enu1</key></Toolbar-0a0b4440></Sizes></Row1><Row2><Sizes/></Row2></Top><Left><Row0><Sizes><Wnd5><Rect><Top>-2</Top><Left>-2</Left><Bottom>434</Bottom><Right>390</Right><x>-2</x><y>-2</y><xscreen>110</xscreen><yscreen>117</yscreen><sizeHorzCX>68750</sizeHorzCX><sizeHorzCY>143032</sizeHorzCY><sizeVertCX>245000</sizeVertCX><sizeVertCY>533007</sizeVertCY></Rect></Wnd5></Sizes></Row0></Left><Right><Row0><Sizes><Wnd6><Rect><Top>-2</Top><Left>-2</Left><Bottom>434</Bottom><Right>579</Right><x>-2</x><y>-2</y><xscreen>441</xscreen><yscreen>283</yscreen><sizeHorzCX>275625</sizeHorzCX><sizeHorzCY>345966</sizeHorzCY><sizeVertCX>363125</sizeVertCX><sizeVertCY>533007</sizeVertCY></Rect></Wnd6></Sizes></Row0></Right><Bottom><Row0><Sizes><Wnd4><Rect><Top>-2</Top><Left>-2</Left><Bottom>315</Bottom><Right>1163</Right><x>-2</x><y>-2</y><xscreen>1165</xscreen><yscreen>317</yscreen><sizeHorzCX>728125</sizeHorzCX><sizeHorzCY>387531</sizeHorzCY><sizeVertCX>68750</sizeVertCX><sizeVertCY>143032</sizeVertCY></Rect></Wnd4><Wnd7><Rect><Top>0</Top><Left>0</Left><Bottom>462454794</Bottom><Right>302625554</Right><x>1161</x><y>-2</y><xscreen>441</xscreen><yscreen>317</yscreen><sizeHorzCX>275625</sizeHorzCX><sizeHorzCY>387531</sizeHorzCY><sizeVertCX>275625</sizeVertCX><sizeVertCY>533007</sizeVertCY></Rect></Wnd7></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-01b0e118><key>iaridepm.enu1</key></Toolbar-01b0e118></Sizes></Row0><Row1><Sizes><Toolbar-0c226178><key>debuggergui.enu1</key></Toolbar-0c226178></Sizes></Row1></Top><Left><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>559</Bottom><Right>383</Right><x>-2</x><y>-2</y><xscreen>110</xscreen><yscreen>117</yscreen><sizeHorzCX>68750</sizeHorzCX><sizeHorzCY>143032</sizeHorzCY><sizeVertCX>240625</sizeVertCX><sizeVertCY>685819</sizeVertCY></Rect></Wnd1></Sizes></Row0></Left><Right><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>559</Bottom><Right>509</Right><x>-2</x><y>-2</y><xscreen>441</xscreen><yscreen>283</yscreen><sizeHorzCX>275625</sizeHorzCX><sizeHorzCY>345966</sizeHorzCY><sizeVertCX>319375</sizeVertCX><sizeVertCY>685819</sizeVertCY></Rect></Wnd2></Sizes></Row0></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>230</Bottom><Right>1163</Right><x>-2</x><y>-2</y><xscreen>1165</xscreen><yscreen>232</yscreen><sizeHorzCX>728125</sizeHorzCX><sizeHorzCY>283619</sizeHorzCY><sizeVertCX>68750</sizeVertCX><sizeVertCY>143032</sizeVertCY></Rect></Wnd0><Wnd3><Rect><Top>0</Top><Left>0</Left><Bottom>317454350</Bottom><Right>619321728</Right><x>1161</x><y>-2</y><xscreen>441</xscreen><yscreen>232</yscreen><sizeHorzCX>275625</sizeHorzCX><sizeHorzCY>283619</sizeHorzCY><sizeVertCX>275625</sizeVertCX><sizeVertCY>533007</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Project>
 
